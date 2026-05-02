@@ -9,7 +9,8 @@ from config import DATASET_NAME, DATASET_SPLIT, GOLDEN_TRUTH_PATH
 
 def load_hf_dataset(n_samples: int = None):
     from datasets import load_dataset
-    ds = load_dataset(DATASET_NAME, split=DATASET_SPLIT)
+    # DATASET_SPLIT is the config name; the actual split is always "train"
+    ds = load_dataset(DATASET_NAME, DATASET_SPLIT, split="train")
     if n_samples:
         ds = ds.select(range(min(n_samples, len(ds))))
     return ds
@@ -17,16 +18,17 @@ def load_hf_dataset(n_samples: int = None):
 
 def _detect_columns(ds) -> tuple[str, str]:
     cols = ds.column_names
+    cols_lower = {c.lower(): c for c in cols}
     for candidate in ("instruction", "prompt", "question", "input"):
-        if candidate in cols:
-            question_col = candidate
+        if candidate in cols_lower:
+            question_col = cols_lower[candidate]
             break
     else:
         question_col = cols[0]
 
     for candidate in ("chosen", "output", "answer", "response"):
-        if candidate in cols:
-            answer_col = candidate
+        if candidate in cols_lower:
+            answer_col = cols_lower[candidate]
             break
     else:
         answer_col = cols[1] if len(cols) > 1 else cols[0]
@@ -159,5 +161,5 @@ if __name__ == "__main__":
 
     records = dataset_to_golden_truth(ds, n_samples=5)
     path = save_golden_truth(records)
-    print(f"Saved {len(records)} golden truth records → {path}")
+    print(f"Saved {len(records)} golden truth records -> {path}")
     print(json.dumps(records[0], indent=2))

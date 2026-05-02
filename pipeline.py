@@ -17,13 +17,16 @@ def get_llm(name: str):
     if name == "gemini":
         from llm.gemini_llm import GeminiLLM
         return GeminiLLM()
+    if name in ("llama", "qwen", "llama4"):
+        from llm.groq_llm import GroqLLM
+        return GroqLLM(name)
     raise ValueError(f"Unknown model: {name}")
 
 
 def main():
     parser = argparse.ArgumentParser(description="LLM Reasoning Evaluation Pipeline")
-    parser.add_argument("--models", nargs="+", default=["openai"],
-                        choices=["openai", "anthropic", "gemini"])
+    parser.add_argument("--models", nargs="+", default=["llama", "qwen", "llama4"],
+                        choices=["openai", "anthropic", "gemini", "llama", "qwen", "llama4"])
     parser.add_argument("--n_questions", type=int, default=20)
     parser.add_argument("--t_runs", type=int, default=T_RUNS)
     parser.add_argument("--rebuild_golden", action="store_true",
@@ -67,7 +70,34 @@ def main():
 
     with open(args.output, "w") as f:
         json.dump(all_results, f, indent=2)
-    print(f"\nResults saved → {args.output}")
+    print(f"Results saved -> {args.output}")
+
+    # Save a human-readable outputs file: one entry per question with all models side by side
+    outputs: list[dict] = []
+    for gt in golden:
+        qid = gt["question_id"]
+        entry = {
+            "question_id": qid,
+            "question": gt["question"],
+            "golden_reasoning_steps": [s["description"] for s in gt["golden_reasoning_steps"]],
+            "golden_answer": gt["golden_final_answer"],
+            "models": {},
+        }
+        for r in all_results:
+            qr = next((q for q in r["question_results"] if q["question_id"] == qid), None)
+            if qr:
+                entry["models"][r["model_name"]] = {
+                    "reasoning_steps": qr["runs"][0]["reasoning_steps"],
+                    "final_answer": qr["runs"][0]["final_answer"],
+                    "raw_response": qr["runs"][0]["raw_response"],
+                    "scores": {k: round(qr[k], 4) for k in ("aas", "ras", "slms", "cs", "dkus", "fps")},
+                }
+        outputs.append(entry)
+
+    outputs_path = Path(args.output).with_name("model_outputs.json")
+    with open(outputs_path, "w", encoding="utf-8") as f:
+        json.dump(outputs, f, indent=2, ensure_ascii=False)
+    print(f"Model outputs saved -> {outputs_path}")
 
 
 if __name__ == "__main__":

@@ -149,7 +149,9 @@ elif page == "Evaluate":
     col1, col2, col3 = st.columns(3)
     with col1:
         selected_models = st.multiselect(
-            "LLMs to evaluate", ["openai", "anthropic", "gemini"], default=["openai"]
+            "LLMs to evaluate",
+            ["llama", "qwen", "llama4", "openai", "anthropic", "gemini"],
+            default=["llama", "qwen", "llama4"],
         )
     with col2:
         n_q = st.number_input("Questions", min_value=1, max_value=200, value=10, step=5)
@@ -175,14 +177,20 @@ elif page == "Evaluate":
         for i, model_name in enumerate(selected_models):
             st.write(f"Querying **{model_name}**…")
             try:
-                if model_name == "openai":
-                    from llm.openai_llm import OpenAILLM as Cls
+                if model_name in ("llama", "qwen", "llama4"):
+                    from llm.groq_llm import GroqLLM
+                    llm = GroqLLM(model_name)
+                elif model_name == "openai":
+                    from llm.openai_llm import OpenAILLM
+                    llm = OpenAILLM()
                 elif model_name == "anthropic":
-                    from llm.anthropic_llm import AnthropicLLM as Cls
+                    from llm.anthropic_llm import AnthropicLLM
+                    llm = AnthropicLLM()
                 else:
-                    from llm.gemini_llm import GeminiLLM as Cls
+                    from llm.gemini_llm import GeminiLLM
+                    llm = GeminiLLM()
 
-                result = evaluate_model(Cls(), golden, weights, t_runs)
+                result = evaluate_model(llm, golden, weights, t_runs)
                 d = results_to_dict(result)
                 all_results.append(d)
                 st.success(

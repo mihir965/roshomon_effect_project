@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+chroma_db/
+results.json
+model_outputs.json
+data/golden_truth.json

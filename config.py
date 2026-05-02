@@ -7,11 +7,26 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+HF_API_KEY = os.getenv("HF_API_KEY", "")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 
 MODELS = {
     "openai": "gpt-4o",
     "anthropic": "claude-3-5-sonnet-20241022",
     "gemini": "gemini-1.5-pro",
+}
+
+# (model_id, provider) — all verified working on free HF tier via together
+HF_MODELS = {
+    "llama":     ("meta-llama/Llama-3.3-70B-Instruct", "together"),
+    "qwen":      ("Qwen/Qwen2.5-7B-Instruct",          "together"),
+    "deepseek":  ("deepseek-ai/DeepSeek-R1",            "together"),
+}
+
+GROQ_MODELS = {
+    "llama":   "llama-3.3-70b-versatile",
+    "qwen":    "qwen/qwen3-32b",
+    "llama4":  "meta-llama/llama-4-scout-17b-16e-instruct",
 }
 
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
