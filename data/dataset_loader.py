@@ -4,12 +4,17 @@ import json
 import re
 from pathlib import Path
 
-from config import DATASET_NAME, DATASET_SPLIT, GOLDEN_TRUTH_PATH
+from config import DATASET_NAME, DATASET_SPLIT, GOLDEN_TRUTH_PATH, HF_TOKEN
 
 
 def load_hf_dataset(n_samples: int = None):
     from datasets import load_dataset
-    ds = load_dataset(DATASET_NAME, split=DATASET_SPLIT)
+    ds = load_dataset(
+        DATASET_NAME,
+        DATASET_SPLIT,
+        split="train",
+        token=HF_TOKEN or None,
+    )
     if n_samples:
         ds = ds.select(range(min(n_samples, len(ds))))
     return ds

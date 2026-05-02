@@ -4,7 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
-from config import DEFAULT_WEIGHTS, T_RUNS, GOLDEN_TRUTH_PATH
+from config import DEFAULT_WEIGHTS, T_RUNS, GOLDEN_TRUTH_PATH, HF_MODELS
 
 
 def get_llm(name: str):
@@ -17,14 +17,17 @@ def get_llm(name: str):
     if name == "gemini":
         from llm.gemini_llm import GeminiLLM
         return GeminiLLM()
+    if name in HF_MODELS:
+        from llm.hf_llm import HuggingFaceLLM
+        return HuggingFaceLLM(HF_MODELS[name])
     raise ValueError(f"Unknown model: {name}")
 
 
 def main():
     parser = argparse.ArgumentParser(description="LLM Reasoning Evaluation Pipeline")
     parser.add_argument("--models", nargs="+", default=["openai"],
-                        choices=["openai", "anthropic", "gemini"])
-    parser.add_argument("--n_questions", type=int, default=20)
+                        choices=["openai", "anthropic", "gemini", *HF_MODELS.keys()])
+    parser.add_argument("--n_questions", type=int, default=5)
     parser.add_argument("--t_runs", type=int, default=T_RUNS)
     parser.add_argument("--rebuild_golden", action="store_true",
                         help="Re-fetch dataset and rebuild golden_truth.json")
