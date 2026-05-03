@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:11434/api/tags)",
+      "Bash(pacman -Ss \"^python3\")",
+      "Bash(command -v uv)",
+      "Bash(command -v pipx)",
+      "Bash(python3.11 -m venv .venv)",
+      "Bash(.venv/bin/python --version)",
+      "Bash(.venv/bin/pip --version)",
+      "Bash(.venv/bin/pip install *)"
+    ]
+  }
+}

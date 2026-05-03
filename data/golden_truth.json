@@ -35,16 +35,16 @@
     "reasoning_type": "multi-step",
     "evaluation_criteria": {
       "must_include_concepts": [
-        "essential",
+        "focus",
+        "justice",
+        "politicians",
         "intent",
-        "policy",
-        "influenced",
-        "policies",
-        "address",
+        "establish",
+        "contemporary",
+        "ensuring",
+        "corresponding",
         "identifying",
-        "issues",
-        "correlating",
-        "understanding"
+        "aligning"
       ],
       "common_failure_modes": [],
       "logical_dependencies": []
@@ -86,16 +86,16 @@
     "reasoning_type": "multi-step",
     "evaluation_criteria": {
       "must_include_concepts": [
-        "essential",
-        "company",
-        "mining",
-        "sustainability",
-        "ethical",
-        "venture",
-        "financial",
+        "factors",
+        "impact",
         "operation",
-        "score",
-        "exceed"
+        "guidelines",
+        "investment",
+        "ethical",
+        "ensuring",
+        "against",
+        "rating",
+        "profit"
       ],
       "common_failure_modes": [],
       "logical_dependencies": []
@@ -137,16 +137,16 @@
     "reasoning_type": "multi-step",
     "evaluation_criteria": {
       "must_include_concepts": [
-        "essential",
-        "dependency",
-        "restrictions",
-        "morning",
-        "solarians",
-        "available",
+        "valid",
+        "afternoon",
+        "schedule",
+        "terrans",
         "evening",
-        "interfaith",
-        "aquarians",
-        "without"
+        "consecutive",
+        "without",
+        "slots",
+        "requirement",
+        "determine"
       ],
       "common_failure_modes": [],
       "logical_dependencies": []
@@ -184,16 +184,16 @@
     "reasoning_type": "multi-step",
     "evaluation_criteria": {
       "must_include_concepts": [
-        "maximum",
+        "calculate",
         "additional",
-        "requirements",
-        "final",
+        "impact",
+        "support",
+        "level",
+        "cities",
+        "workshops",
         "constraints",
-        "assess",
-        "optimize",
-        "resource",
-        "required",
-        "workshops"
+        "maximum",
+        "selection"
       ],
       "common_failure_modes": [],
       "logical_dependencies": []
@@ -235,16 +235,2224 @@
     "reasoning_type": "multi-step",
     "evaluation_criteria": {
       "must_include_concepts": [
+        "factors",
+        "regulations",
         "features",
-        "essential",
-        "footprint",
-        "accessibility",
-        "regional",
-        "sustainability",
         "practices",
         "ethical",
-        "conflicts",
-        "enhance"
+        "ensuring",
+        "intensive",
+        "collection",
+        "scrutinized",
+        "platform"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0005",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyra is refining her statistical model to enhance cryptocurrency trading strategies by selecting the most effective combination of technical indicators. She has identified three key indicators: Moving Average Crossover (MAC), Relative Strength Index (RSI), and Trading Volume Anomalies (TVA). Historical data provides the following insights into the model's predictive performance based on different indicator combinations:\n\nRelevant Facts and Constraints:\n1. All Three Indicators (MAC, RSI, TVA): Predicts a 10% price increase with 95% confidence.\n2. MAC and RSI Only: Predicts a 5% price increase with 80% confidence.\n3. RSI and TVA Only: Predicts a 7% price increase with 85% confidence.\n4. MAC and TVA Only: Predicts a 6% price increase with 90% confidence.\n5. Zephyra's computational resources allow her to include no more than two indicators in her model.\n\nTask:\nDetermine which pair of indicators Zephyra should select to maximize the predicted price increase while ensuring a confidence level of at least 85% in her model's predictions.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "In refining her statistical model, Zephyra must evaluate the combinations of technical indicators based on two primary criteria: the predicted price increase and the associated confidence level."
+      },
+      {
+        "step_number": 2,
+        "description": "The constraints include:\n\n1."
+      },
+      {
+        "step_number": 3,
+        "description": "Indicator Combinations: Zephyra has identified three indicators-Moving Average Crossover (MAC), Relative Strength Index (RSI), and Trading Volume Anomalies (TVA)."
+      },
+      {
+        "step_number": 4,
+        "description": "However, she is limited to using no more than two indicators simultaneously due to computational resource constraints."
+      },
+      {
+        "step_number": 5,
+        "description": "Performance Metrics: Each possible pair of indicators offers different predictions for price increases and varying levels of confidence:\n   - MAC and RSI: 5% increase with 80% confidence."
+      },
+      {
+        "step_number": 6,
+        "description": "- RSI and TVA: 7% increase with 85% confidence."
+      }
+    ],
+    "golden_final_answer": "Conclusion: The RSI and TVA combination is the most advantageous choice for Zephyra. It satisfies the minimum confidence requirement of 85% and offers the highest predicted price increase of 7% among the permissible indicator pairs. This selection optimally balances both performance metrics within the given computational constraints, thereby enhancing the effectiveness of her cryptocurrency trading strategies.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "price",
+        "offers",
+        "trading",
+        "different",
+        "technical",
+        "indicators",
+        "three",
+        "level",
+        "possible",
+        "evaluate"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0006",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyra is planning a series of surprise appreciation events for her five closest friends over a span of three weekends. Each event must be held on either a Saturday or Sunday and must take place at a unique venue. The available venues are the Botanical Garden, a trendy cafe, a movie theater, a pottery studio, and an escape room. Each friend has specific venue preferences and limited availability, requiring Zephyra to carefully schedule each event to accommodate everyone's preferences without any overlaps.\n\nFacts and Constraints:\n\n1. Friend Preferences and Availability:\n   - Liam prefers the Botanical Garden and is only available on the first Saturday and second Sunday.\n   - Maya prefers the trendy cafe and is available on the first Sunday and third Saturday.\n   - Noah prefers the movie theater and is available on the second Saturday and third Sunday.\n   - Ava prefers the pottery studio and is available on the first Saturday, second Sunday, and third Saturday.\n   - Ethan prefers the escape room and is available on the first Sunday, second Saturday, and third Sunday.\n\n2. Venue Constraints:\n   - Each venue can host only one event per day.\n   - Each event must be held at the friend's preferred venue.\n   \n3. Scheduling Constraints:\n   - All events must occur within the same month, which has exactly three Saturdays and three Sundays.\n   - No two events can take place on the same day.\n   \nProblem Statement:\n\nDetermine a schedule that assigns each friend's appreciation event to a specific date (Saturday or Sunday) and venue, ensuring that all their venue preferences and availability constraints are satisfied without any scheduling conflicts.\n\nQuestion:\n\nWhat is the optimal schedule for Zephyra to host the five appreciation events, specifying the date (e.g., First Saturday), venue, and corresponding friend for each event?",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "Assign Liam"
+      },
+      {
+        "step_number": 2,
+        "description": "Assign Maya"
+      },
+      {
+        "step_number": 3,
+        "description": "Assign Noah"
+      },
+      {
+        "step_number": 4,
+        "description": "Assign Ava"
+      },
+      {
+        "step_number": 5,
+        "description": "Assign Ethan"
+      }
+    ],
+    "golden_final_answer": "This schedule successfully accommodates all friends' venue preferences and availability while adhering to the venue and scheduling constraints. Each event is assigned to a unique date and venue, ensuring no overlaps or conflicts.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "assign",
+        "ethan"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0007",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zyra is preparing for a prestigious environmental poetry competition that requires each poet to incorporate specific philosophical themes inspired by renowned environmental activists. This competition emphasizes the integration of activist strategies with poetic expression to convey powerful messages about climate change.\n\nProblem Statement:\n\nZyra has chosen to incorporate four unconventional philosophies from different environmental activists into her latest collection of poems. Each philosophy must be represented by a distinct poetic form, and each poem must adhere to specific structural constraints to effectively convey its message. Zyra must ensure that no two philosophies share the same poetic form and that the structural constraints align with the essence of each philosophy.\n\nRelevant Facts, Constraints, and Rules:\n\n1. Philosophies:\n   - Eco-Pragmatism: Focuses on practical solutions and tangible actions to combat climate change.\n   - Deep Ecology: Emphasizes the intrinsic value of all living beings and the interconnectedness of nature.\n   - Sustainable Modernism: Advocates for integrating modern technology with sustainable practices.\n   - Bioregionalism: Promotes living in harmony with the natural characteristics of one's local environment.\n\n2. Poetic Forms:\n   - Sonnet: A 14-line poem with a specific rhyme scheme, traditionally used to express deep emotion.\n   - Haiku: A concise 3-line poem with a 5-7-5 syllable structure, capturing a moment in nature.\n   - Free Verse: Poetry without a fixed pattern, allowing freedom in structure and expression.\n   - Villanelle: A 19-line poem with repeating refrains and a specific rhyme scheme, often exploring complex themes.\n\n3. Structural Constraints:\n   - The poem representing Eco-Pragmatism must include a clear call to action.\n   - The Deep Ecology poem should highlight the interconnectedness of different species.\n   - Sustainable Modernism's poem must incorporate elements of technology within its structure.\n   - The Bioregionalism poem needs to reflect specific local environmental features.\n\n4. Assignment Rules:\n   - Each philosophy must be matched with one unique poetic form.\n   - No poetic form can be assigned to more than one philosophy.\n   - The structural constraints must be strictly followed for each respective poem.\n\nTask:\n\nDetermine which poetic form Zyra should assign to each of the four philosophies to meet all the competition's requirements. Provide a clear rationale for each assignment based on the characteristics of the philosophies and the features of the poetic forms.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To effectively assign each environmental philosophy to a distinct poetic form, it is essential to analyze both the intrinsic nature of each philosophy and the defining characteristics of each poetic form."
+      },
+      {
+        "step_number": 2,
+        "description": "The goal is to ensure that the chosen poetic form not only aligns with the essence of the philosophy but also complements the specific structural constraints imposed by the competition."
+      },
+      {
+        "step_number": 3,
+        "description": "Key factors to consider include:\n\n1."
+      },
+      {
+        "step_number": 4,
+        "description": "Alignment of Philosophical Themes with Poetic Features:\n   - Eco-Pragmatism emphasizes actionable and practical solutions, necessitating a form that can clearly convey calls to action."
+      },
+      {
+        "step_number": 5,
+        "description": "- Deep Ecology focuses on the interconnectedness of all living beings, requiring a form that can intricately weave complex relationships within its structure."
+      },
+      {
+        "step_number": 6,
+        "description": "- Sustainable Modernism integrates technology with sustainability, benefiting from a form that can incorporate contemporary elements seamlessly."
+      }
+    ],
+    "golden_final_answer": "By meticulously aligning each philosophy with a poetic form that best embodies its core principles and meets the structural constraints, Zyra can create a compelling and cohesive collection of poems that resonate with the competition's emphasis on integrating activist strategies with poetic expression.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "structural",
+        "seamlessly",
+        "competition",
+        "relationships",
+        "features",
+        "solutions",
+        "characteristics",
+        "aligns",
+        "contemporary"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0008",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr has been assigned to analyze the performance trends of a professional basketball team over the current season to identify factors contributing to the team's winning streak. The team has played 20 games, with varying results based on player availability, coaching strategies, and opponent strength. Zephyr aims to determine which combination of these factors most significantly correlates with the team's victories.\n\nProblem Statement:\nIdentify the optimal combination of player availability, coaching strategies, and opponent strength that has the highest correlation with the team's winning outcomes during the 20-game season.\n\nRelevant Facts, Constraints, and Rules:\n1. Player Availability:\n   - The team has 12 players, with 5 starting players and 7 substitutes.\n   - Availability varies due to minor injuries and personal reasons.\n   - At least 4 starting players are available for each game.\n\n2. Coaching Strategies:\n   - There are three primary strategies employed:\n     - Defensive-focused strategy (Strategy D)\n     - Offensive-focused strategy (Strategy O)\n     - Balanced strategy combining both defensive and offensive elements (Strategy B)\n   - The coach selects one strategy per game based on the opponent.\n\n3. Opponent Strength:\n   - Opponents are categorized into three strength levels:\n     - Weak (W)\n     - Moderate (M)\n     - Strong (S)\n   - The strength level affects the game's difficulty and required strategy.\n\n4. Game Outcomes:\n   - A win is influenced by the alignment of player availability, chosen strategy, and opponent strength.\n   - Historical data shows the following win rates based on these variables:\n     - Strategy D against Strong opponents: 40%\n     - Strategy O against Weak opponents: 70%\n     - Strategy B against Moderate opponents: 60%\n     - Other combinations have varying win rates between 30% to 50%.\n\n5. Additional Constraints:\n   - Strategy selection must consider at least two available starting players who are specialized in executing that strategy effectively.\n   - No more than two substitute players are used in a single game.\n\nSpecific Question:\nGiven the constraints and historical win rates, what combination of player availability, coaching strategy, and opponent strength is most likely to result in a victory for the team? Provide a logical explanation based on the provided data to support your conclusion.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the optimal combination of player availability, coaching strategy, and opponent strength that most significantly correlates with the team's victories, the following factors must be meticulously analyzed:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Historical Win Rates: Evaluating the win percentages associated with each strategy-opponent pairing provides a foundational understanding of which combinations yield the highest success rates."
+      },
+      {
+        "step_number": 3,
+        "description": "Player Availability and Specialization: Ensuring that the team has the requisite number of specialized starting players available to effectively execute the chosen strategy is crucial."
+      },
+      {
+        "step_number": 4,
+        "description": "This involves assessing the availability of at least two starting players specialized in the selected strategy."
+      },
+      {
+        "step_number": 5,
+        "description": "Substitute Utilization Constraints: Adhering to the constraint of using no more than two substitute players per game impacts the overall composition of the team and the execution of strategies."
+      },
+      {
+        "step_number": 6,
+        "description": "Alignment of Strategy with Opponent Strength: Selecting a strategy that aligns optimally with the opponent's strength level enhances the probability of securing a victory."
+      }
+    ],
+    "golden_final_answer": "By selecting an Offensive-focused strategy when facing Weak opponents and ensuring the availability of at least two specialized starting players while limiting substitute usage to two per game, the team positions itself to achieve the highest possible victory rate of 70%. This strategic alignment not only leverages historical performance data but also meticulously adheres to the operational constraints, thereby presenting the most robust approach to sustaining and enhancing the team's winning streak.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "victory",
+        "historical",
+        "correlates",
+        "strategy",
+        "pairing",
+        "yield",
+        "requisite",
+        "substitute",
+        "ensuring"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0009",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is evaluating the effectiveness of an AI-driven psychological profiling system implemented in a regional correctional facility. The system utilizes various data inputs to predict the likelihood of recidivism and to recommend personalized rehabilitation programs for offenders. Recently, five offenders-Alpha, Bravo, Charlie, Delta, and Echo-have been processed by the system. Each offender has a distinct profile based on their psychological assessment scores, types of offenses committed, participation in specific rehabilitation modules, and subsequent recidivism outcomes within a year.\n\nRelevant Facts and Constraints:\n1. Offenders and Attributes:\n   - Alpha: High scores in impulsivity and aggression; committed a property crime.\n   - Bravo: Moderate scores in anxiety and depression; committed a violent crime.\n   - Charlie: Low scores in antisocial behavior; committed a cybercrime.\n   - Delta: High scores in manipulation and deceit; committed a fraud-related crime.\n   - Echo: Moderate scores in impulsivity and substance abuse; committed a theft.\n\n2. Rehabilitation Modules Offered:\n   - Module 1: Cognitive Behavioral Therapy (CBT)\n   - Module 2: Anger Management\n   - Module 3: Substance Abuse Counseling\n   - Module 4: Vocational Training\n   - Module 5: Social Skills Development\n\n3. System Recommendations and Outcomes:\n   - Only one offender did not participate in any rehabilitation module and recidivated.\n   - Offenders with high aggression scores were recommended Module 2.\n   - Offenders involved in substance-related offenses were recommended Module 3.\n   - Participation in Module 1 was mandatory for those with high anxiety scores.\n   - Offenders who engaged in property and theft crimes were recommended Module 4.\n   - Echo did not participate in Module 5 and did not recidivate.\n   - Charlie participated in Module 4 and did not recidivate.\n   - Delta participated in Module 2 and Module 5.\n   - Bravo participated in Module 1 and Module 3.\n   - Alpha participated in Module 2 and recidivated.\n\nProblem:\nBased on the above information, determine which rehabilitation modules Echo participated in and identify the offender who did not participate in any rehabilitation module.\n\nQuestion:\n1. Which rehabilitation modules were assigned to Echo?\n2. Which offender did not participate in any rehabilitation module and what was their recidivism outcome?",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "Overview of Offenders and Attributes"
+      },
+      {
+        "step_number": 2,
+        "description": "Determining Echo's Rehabilitation Modules"
+      },
+      {
+        "step_number": 3,
+        "description": "Identifying the Offender Who Did Not Participate in Any Rehabilitation Module"
+      }
+    ],
+    "golden_final_answer": "- Offender without Module Participation: Alpha (recidivated).",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "overview",
+        "determining",
+        "modules",
+        "module",
+        "offender",
+        "offenders",
+        "participate",
+        "rehabilitation",
+        "identifying",
+        "attributes"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0010",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is coordinating the establishment of mental health support centers across a metropolitan area to enhance community accessibility and support recovery from addiction. The city is divided into five districts: North, South, East, West, and Central. Each district has varying population sizes, existing mental health resources, and community engagement levels. Zephyr has a limited budget that allows for the opening of three new support centers. Additionally, each support center requires a minimum of two trained facilitators and must be placed in a district that currently has fewer than four mental health resources to avoid oversaturation.\n\nRelevant Facts and Constraints:\n1. District Populations:\n   - North: 150,000 residents\n   - South: 120,000 residents\n   - East: 200,000 residents\n   - West: 180,000 residents\n   - Central: 100,000 residents\n\n2. Existing Mental Health Resources:\n   - North: 3 centers\n   - South: 5 centers\n   - East: 2 centers\n   - West: 4 centers\n   - Central: 1 center\n\n3. Community Engagement Levels (on a scale of 1 to 5):\n   - North: 4\n   - South: 3\n   - East: 5\n   - West: 2\n   - Central: 4\n\n4. Budget Constraints:\n   - Each new support center costs the allocated budget for three centers.\n   - Each center must have at least two trained facilitators.\n   - Centers can only be established in districts with fewer than four existing resources.\n\nTask:\nDetermine in which three districts Zephyr should establish the new mental health support centers to maximize community impact. Consider population size, existing resources, and community engagement levels in your decision-making process. Provide a logical explanation for the chosen districts based on the given constraints and facts.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the optimal locations for establishing three new mental health support centers, several factors must be evaluated:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Eligibility of Districts: Only districts with fewer than four existing mental health resources are eligible to avoid resource oversaturation."
+      },
+      {
+        "step_number": 3,
+        "description": "This excludes the South and West districts."
+      },
+      {
+        "step_number": 4,
+        "description": "Population Size: Higher population areas may benefit more from additional support centers due to the larger number of residents potentially requiring services."
+      },
+      {
+        "step_number": 5,
+        "description": "Community Engagement Levels: Districts with higher engagement levels are likely to have better utilization and community support for new mental health initiatives."
+      },
+      {
+        "step_number": 6,
+        "description": "Existing Resources: Assessing the current number of support centers helps identify areas that are underserved and could benefit significantly from additional resources."
+      }
+    ],
+    "golden_final_answer": "By selecting the East, North, and Central districts, Zephyr ensures that the new mental health support centers are placed in areas with substantial populations and high community engagement, while also addressing the regions that are currently underserved in terms of existing resources. This strategic allocation maximizes the impact of the limited budget and enhances overall community accessibility to mental health support services.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "areas",
+        "eligibility",
+        "additional",
+        "initiatives",
+        "helps",
+        "three",
+        "support",
+        "avoid",
+        "excludes"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0011",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Althea is assigned to enhance the cybersecurity framework of a sensitive government communication network that currently employs a legacy encryption system vulnerable to recent cryptographic attacks. She must integrate an advanced encryption solution that complies with strict government regulations, maintains system performance, and ensures user accessibility within classified environments.\n\nProblem Statement:\n\nAlthea needs to choose an appropriate encryption protocol to replace the existing vulnerable system. She has shortlisted three potential encryption algorithms: CipherX, CipherY, and CipherZ. Each algorithm has distinct characteristics regarding security strength, computational overhead, compatibility with existing infrastructure, and user experience impact.\n\nRelevant Facts, Constraints, and Rules:\n\n1. Security Strength:\n   - CipherX: High security, resistant to known attacks.\n   - CipherY: Medium security, susceptible to certain advanced attacks.\n   - CipherZ: High security, but with emerging vulnerabilities under specific conditions.\n\n2. Computational Overhead:\n   - CipherX: Requires significant processing power, potentially slowing down the network.\n   - CipherY: Low computational requirements, minimal impact on network performance.\n   - CipherZ: Moderate computational needs, balanced performance impact.\n\n3. Compatibility:\n   - CipherX: Fully compatible with existing infrastructure without requiring major upgrades.\n   - CipherY: Requires minor infrastructure adjustments but is generally compatible.\n   - CipherZ: Incompatible with some legacy systems, necessitating extensive infrastructure modifications.\n\n4. User Experience:\n   - CipherX: No noticeable impact on user operations.\n   - CipherY: Slight delay in data transmission, mildly affecting user experience.\n   - CipherZ: Potential for intermittent access issues during peak usage times.\n\n5. Regulatory Compliance:\n   - All three algorithms meet current government encryption standards.\n   - Future-proofing is necessary to comply with anticipated stricter regulations in two years.\n\nTask:\n\nDetermine which encryption algorithm Althea should implement to replace the legacy system, ensuring the highest possible security without compromising system performance, compatibility, and user experience. Justify the choice based on the provided facts, constraints, and rules.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "When selecting an appropriate encryption protocol to replace the existing vulnerable system, several critical factors must be meticulously evaluated to ensure compliance with government regulations and maintain operational integrity."
+      },
+      {
+        "step_number": 2,
+        "description": "The primary considerations include:\n\n1."
+      },
+      {
+        "step_number": 3,
+        "description": "Security Strength: The chosen algorithm must offer robust protection against current and foreseeable cryptographic attacks to safeguard sensitive government communications."
+      },
+      {
+        "step_number": 4,
+        "description": "Computational Overhead: It's essential to balance security with system performance."
+      },
+      {
+        "step_number": 5,
+        "description": "High computational demands could degrade network performance, whereas low overhead ensures efficiency."
+      },
+      {
+        "step_number": 6,
+        "description": "Compatibility with Existing Infrastructure: Seamless integration with the current infrastructure is vital to minimize implementation costs and avoid extensive system overhauls that could lead to operational disruptions."
+      }
+    ],
+    "golden_final_answer": "In conclusion, CipherX provides the optimal balance between security strength and compatibility without compromising user experience significantly. While it introduces some computational overhead, the paramount importance of securing sensitive government communications justifies this trade-off. CipherX's alignment with current and future regulatory requirements further solidifies its suitability as the replacement for the legacy encryption system.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "safeguard",
+        "infrastructure",
+        "regulations",
+        "algorithm",
+        "offer",
+        "maintain",
+        "protection",
+        "avoid",
+        "attacks"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0012",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is organizing a statewide renewable energy initiative in Tasmania aimed at increasing the use of solar, wind, and hydroelectric power sources. The initiative requires collaboration among five key communities: North Shore, East Valley, South Coast, West Ridge, and Central Plains. Each community has different resource potentials and public support levels for each type of renewable energy:\n\n- North Shore: High potential for wind energy, medium public support for wind and low for solar and hydroelectric.\n- East Valley: High potential for solar energy, high public support for solar, low for wind and medium for hydroelectric.\n- South Coast: High potential for hydroelectric energy, medium public support for hydroelectric and wind, low for solar.\n- West Ridge: Medium potential for all three energy types, with high public support for wind and solar, and low for hydroelectric.\n- Central Plains: Low potential for wind and hydroelectric, high potential for solar, and medium public support for all energy types.\n\nThe initiative has the following constraints:\n1. The total budget allows for the implementation of only three community projects.\n2. Each selected community can support only one type of renewable energy project based on their highest potential and public support.\n3. To maximize overall initiative success, the selected projects should cover as many different types of renewable energy as possible.\n4. The combined public support across all selected projects must be maximized.\n\nQuestion:\nWhich three communities should Zephyr select for the renewable energy initiative, and which type of renewable energy project should each community implement to adhere to the constraints and maximize the initiative's success?",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "When selecting communities for the renewable energy initiative, several critical factors must be evaluated to ensure the project's success within the given constraints:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Resource Potential and Public Support: Each community possesses varying potentials and levels of public support for solar, wind, and hydroelectric energy."
+      },
+      {
+        "step_number": 3,
+        "description": "Identifying the optimal match between a community's resource potential and its public support is essential for successful project implementation."
+      },
+      {
+        "step_number": 4,
+        "description": "Budgetary Constraints: The initiative permits only three community projects."
+      },
+      {
+        "step_number": 5,
+        "description": "Prioritizing communities that offer the highest combined public support and diverse energy types will maximize the initiative's impact."
+      },
+      {
+        "step_number": 6,
+        "description": "Diversity of Energy Types: To enhance the initiative's overall effectiveness, it is imperative to cover as many different types of renewable energy as possible."
+      }
+    ],
+    "golden_final_answer": "This combination ensures comprehensive coverage of different renewable energy sources and maximizes overall public support, aligning with the initiative's objectives and constraints.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "permits",
+        "impact",
+        "different",
+        "offer",
+        "three",
+        "support",
+        "potentials",
+        "communities",
+        "implementation"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0013",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Alessandro is preparing for an upcoming symposium dedicated to the preservation of traditional Italian cuisine. He plans to showcase a selection of regional recipes that highlight the diversity of local ingredients and cultural practices across different Italian provinces. Alessandro has identified four provinces-Tuscany, Sicily, Lombardy, and Emilia-Romagna-and wishes to select one representative recipe from each. However, he must adhere to the following constraints:\n\n1. Ingredient Availability: Each chosen recipe must feature a primary ingredient that is exclusively produced in its respective province.\n2. Cultural Significance: No two recipes can originate from provinces that have historically influenced each other's culinary traditions.\n3. Mentorship Program Alignment: Each recipe must be linked to a mentorship project Alessandro has recently overseen, ensuring that the featured dish was developed under his guidance within the last two years.\n4. Symposium Theme Compatibility: The symposium has four thematic categories-Historical Significance, Ingredient Sustainability, Modern Adaptations, and Culinary Techniques-which must each correspond to one of the selected recipes without overlap.\n\nProblem Statement:\nDetermine which recipe Alessandro should select from each of the four provinces to meet all the given constraints for the symposium presentation.\n\nFacts, Constraints, and Rules:\n- Provinces and Exclusive Ingredients:\n  - Tuscany: Olive oil\n  - Sicily: Citrus fruits\n  - Lombardy: Rice\n  - Emilia-Romagna: Parmigiano-Reggiano cheese\n- Historical Culinary Influences:\n  - Tuscany and Lombardy have influenced each other's cuisines historically.\n  - Sicily and Emilia-Romagna have no historical culinary exchanges.\n  - Tuscany and Emilia-Romagna have no historical culinary exchanges.\n  - Sicily and Lombardy have influenced each other's cuisines historically.\n- Mentorship Projects:\n  - The Mentorship Project A is associated with a Tuscan recipe.\n  - The Mentorship Project B is associated with a Sicilian recipe.\n  - The Mentorship Project C is associated with a Lombard recipe.\n  - The Mentorship Project D is associated with an Emilia-Romagna recipe.\n- Symposium Themes and Recipe Links:\n  - Historical Significance: Must not be linked to Mentorship Project C.\n  - Ingredient Sustainability: Must feature a primary ingredient from Lombardia.\n  - Modern Adaptations: Must not feature Parmigiano-Reggiano cheese.\n  - Culinary Techniques: Must be linked to Mentorship Project B.\n\nQuestion:\nWhich recipe should Alessandro select from each province (Tuscany, Sicily, Lombardy, Emilia-Romagna) to satisfy all symposium constraints, and how should each be categorized under the symposium's thematic categories?",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the appropriate recipe assignments for Alessandro's symposium, several critical factors must be evaluated:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Ingredient Exclusivity: Each selected recipe must prominently feature an ingredient unique to its respective province:\n   - Tuscany: Olive oil\n   - Sicily: Citrus fruits\n   - Lombardy: Rice\n   - Emilia-Romagna: Parmigiano-Reggiano cheese\n\n2."
+      },
+      {
+        "step_number": 3,
+        "description": "Historical Culinary Influences: It is imperative to ensure that no two selected provinces have a history of influencing each other's culinary traditions."
+      },
+      {
+        "step_number": 4,
+        "description": "The historical influences are as follows:\n   - Mutual Influence: Tuscany <-> Lombardy and Sicily <-> Lombardy\n   - No Influence: Sicily <-> Emilia-Romagna and Tuscany <-> Emilia-Romagna\n\n3."
+      },
+      {
+        "step_number": 5,
+        "description": "Mentorship Program Alignment: Each recipe must correspond to a specific mentorship project overseen by Alessandro within the past two years:\n   - Project A: Tuscany\n   - Project B: Sicily\n   - Project C: Lombardy\n   - Project D: Emilia-Romagna\n\n4."
+      },
+      {
+        "step_number": 6,
+        "description": "Symposium Theme Compatibility: Each recipe must be categorized under one of the four thematic categories without overlap, adhering to specific constraints:\n   - Historical Significance: Cannot be linked to Project C."
+      }
+    ],
+    "golden_final_answer": "This configuration satisfies all symposium constraints by ensuring ingredient exclusivity, avoiding historical culinary conflicts, aligning with mentorship projects, and appropriately categorizing each recipe under the designated thematic themes.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "fruits",
+        "correspond",
+        "historical",
+        "prominently",
+        "years",
+        "program",
+        "without",
+        "tuscany",
+        "linked"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0014",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is meticulously planning a month-long series of romantic surprises to celebrate their relationship's milestones. They aim to create a memorable experience by organizing one surprise each week, ensuring that each event aligns with specific themes and adheres to a set budget. Zephyr wants to balance different types of activities to maintain a whimsical and heartfelt ambiance throughout the month.\n\nProblem Statement:\nZephyr needs to schedule four distinct surprises over four consecutive weeks. Each surprise must adhere to one of the following themes: Adventure, Creativity, Relaxation, and Romance. The budget for each surprise varies based on the theme:\n- Adventure: $150\n- Creativity: $100\n- Relaxation: $120\n- Romance: $130\n\nAdditionally, Zephyr has the following constraints:\n1. The Relaxation surprise must occur before the Adventure surprise.\n2. The Creativity surprise cannot be scheduled in the first week.\n3. The Romance surprise has to be immediately after a surprise that costs more than $110.\n4. No two consecutive surprises can have themes that start with the same letter.\n\nTask:\nDetermine the order of the four weekly surprises, specifying which theme is assigned to each week, while adhering to all the given constraints.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "Applying Constraint 2"
+      },
+      {
+        "step_number": 2,
+        "description": "Applying Constraint 1"
+      },
+      {
+        "step_number": 3,
+        "description": "Applying Constraint 4"
+      },
+      {
+        "step_number": 4,
+        "description": "Applying Constraint 3"
+      },
+      {
+        "step_number": 5,
+        "description": "Constructing Possible Sequences"
+      },
+      {
+        "step_number": 6,
+        "description": "Evaluating Other Possibilities"
+      }
+    ],
+    "golden_final_answer": "- No two consecutive themes share the same starting letter.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "constraint",
+        "possibilities",
+        "constructing",
+        "possible",
+        "applying",
+        "evaluating",
+        "sequences"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0015",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyra is expanding her ecological sanctuary to accommodate three newly identified endangered species: the Azure Parrot, the Silverback Gorilla, and the Emerald Frog. Each species has specific habitat requirements and interactions that must be carefully planned to ensure their survival and promote biodiversity. The sanctuary consists of five distinct habitat zones: Tropical Forest, Freshwater Pond, Grassland, Rocky Outcrop, and Coastal Marsh. Additionally, certain species require proximity to others for symbiotic relationships, and there are restrictions on habitat adjacency based on environmental impact assessments.\n\nFacts and Constraints:\n1. The Azure Parrot thrives exclusively in the Tropical Forest and requires that the Grassland zone be adjacent to its habitat for feeding purposes.\n2. The Silverback Gorilla needs the Tropical Forest and the Rocky Outcrop for nesting and foraging. These two habitats must be adjacent to each other to allow movement between nesting sites and foraging grounds.\n3. The Emerald Frog can only survive in the Freshwater Pond and Coastal Marsh areas. Its habitat must be isolated from the Grassland to prevent predation by ground-dwelling species.\n4. The Grassland zone cannot be adjacent to the Freshwater Pond due to differing soil moisture requirements.\n5. The Coastal Marsh must be adjacent to the Rocky Outcrop to facilitate natural water drainage patterns.\n6. Each habitat zone can be assigned to only one type of environment, and all five zones must be utilized in the sanctuary layout.\n\nProblem:\nDetermine the optimal assignment of the five habitat zones (Tropical Forest, Freshwater Pond, Grassland, Rocky Outcrop, Coastal Marsh) to the sanctuary's physical areas. Ensure that all species' habitat requirements and adjacency constraints are satisfied to promote biodiversity and conservation efforts effectively.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the optimal assignment of the five habitat zones within the sanctuary, it is essential to meticulously analyze the given species-specific habitat requirements and adjacency constraints."
+      },
+      {
+        "step_number": 2,
+        "description": "The primary considerations include:\n\n1."
+      },
+      {
+        "step_number": 3,
+        "description": "Species Habitat Exclusivity and Requirements:\n   - Azure Parrot: Exclusively inhabits the Tropical Forest and requires adjacent Grassland for feeding."
+      },
+      {
+        "step_number": 4,
+        "description": "- Silverback Gorilla: Utilizes both the Tropical Forest and Rocky Outcrop, necessitating their adjacency for efficient movement between nesting and foraging sites."
+      },
+      {
+        "step_number": 5,
+        "description": "- Emerald Frog: Restricted to Freshwater Pond and Coastal Marsh habitats, with a critical need for isolation from Grassland to mitigate predation risks."
+      },
+      {
+        "step_number": 6,
+        "description": "Adjacency Constraints:\n   - Grassland must be adjacent to Tropical Forest but not to Freshwater Pond."
+      }
+    ],
+    "golden_final_answer": "This configuration ensures that all species-specific habitat requirements and adjacency constraints are meticulously met. By strategically positioning each habitat zone, Zephyra can effectively promote biodiversity and conservation within her ecological sanctuary, providing a harmonious and sustainable environment for the Azure Parrot, Silverback Gorilla, and Emerald Frog.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "habitat",
+        "grassland",
+        "rocky",
+        "marsh",
+        "parrot",
+        "silverback",
+        "exclusively",
+        "outcrop",
+        "requires",
+        "gorilla"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0016",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zyra has received intelligence indicating that a state-sponsored adversary is preparing a coordinated unconventional warfare and cyber operation against three critical infrastructure facilities: the national power grid, the central banking system, and the transportation control centers. Preliminary data suggests that each target will be associated with a specific type of cyber attack and a physical sabotage method, but the exact pairings are unclear.\n\nRelevant Facts and Constraints:\n\n1. The national power grid will be subjected to either a Distributed Denial of Service (DDoS) attack or a malware infiltration.\n2. The central banking system will experience either a phishing campaign or ransomware deployment.\n3. The transportation control centers will be targeted with either a SQL injection attack or a supply chain compromise.\n4. Each type of cyber attack is uniquely paired with a specific sabotage method:\n   - DDoS attack is paired with EMP devices.\n   - Malware infiltration is paired with insider threats.\n   - Phishing campaigns are paired with physical document tampering.\n   - Ransomware deployment is paired with equipment sabotage.\n   - SQL injection attacks are paired with traffic signal manipulation.\n   - Supply chain compromises are paired with false intelligence dissemination.\n5. No two targets will receive the same type of cyber attack or sabotage method.\n6. The adversary tends to avoid using insider threats against the central banking system.\n7. The power grid will not be targeted with equipment sabotage.\n\nProblem:\n\nBased on the above information, determine the specific pairing of cyber attack and sabotage method assigned to each of the three targets: the national power grid, the central banking system, and the transportation control centers.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "Enumerate Possible Pairings for Each Target"
+      },
+      {
+        "step_number": 2,
+        "description": "Apply Constraints to Narrow Down Possibilities"
+      },
+      {
+        "step_number": 3,
+        "description": "Deduce the Assignments"
+      }
+    ],
+    "golden_final_answer": "- No duplication of cyber attacks or sabotage methods across targets.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "assignments",
+        "apply",
+        "narrow",
+        "target",
+        "possibilities",
+        "enumerate",
+        "pairings",
+        "constraints",
+        "possible",
+        "deduce"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0017",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is examining four significant artistic works from the civil rights era-two songs and two posters-each created by different artists (A, B, C, D) and each associated with a unique social movement (Voter Registration, Desegregation, Economic Equality, Anti-Violence Advocacy). To understand the interplay between these art forms and their respective movements, Zephyr must accurately match each artist to their creation and the movement it supported.\n\nRelevant Facts and Constraints:\n\n1. Artist A:\n   - Created a work promoting Economic Equality.\n   - The work is not a song.\n\n2. Voter Registration Poster:\n   - Created by either Artist B or Artist D.\n\n3. \"Freedom Voices\":\n   - A song linked to Anti-Violence Advocacy.\n\n4. Artist C:\n   - Did not create any work associated with Desegregation.\n\n5. Desegregation Movement:\n   - Represented by a song, not a poster.\n\n6. Artist D's Poster:\n   - Not associated with Voter Registration.\n\nTask:\n\nDetermine which artist (A, B, C, D) created each piece of art (song or poster) and identify the corresponding social movement they supported.\n\nLogical Reasoning to Solution:\n\n1. From Fact 3, \"Freedom Voices\" is a song linked to Anti-Violence Advocacy.\n\n2. Since Artist A did not create a song (Fact 1), and \"Freedom Voices\" is a song, Artist A must have created a poster for Economic Equality.\n\n3. The Desegregation movement is represented by a song (Fact 5), and since \"Freedom Voices\" is already linked to Anti-Violence Advocacy, the Desegregation song must be by another artist.\n\n4. Artist C did not work on Desegregation (Fact 4), so the Desegregation song must be by Artist B or D.\n\n5. The Voter Registration poster is by Artist B or D (Fact 2). However, Artist D's poster is not associated with Voter Registration (Fact 6), so the Voter Registration poster must be by Artist B.\n\n6. Therefore, Artist D must have created the Desegregation song.\n\n7. Artist C, having not worked on Desegregation, must have created the remaining piece, which is the Anti-Violence Advocacy song \"Freedom Voices\".\n\nFinal Matching:\n\n- Artist A: Poster promoting Economic Equality.\n- Artist B: Poster advocating for Voter Registration.\n- Artist C: Song \"Freedom Voices\" linked to Anti-Violence Advocacy.\n- Artist D: Song representing Desegregation.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To accurately match each artist (A, B, C, D) to their respective artistic creation (song or poster) and the associated social movement (Voter Registration, Desegregation, Economic Equality, Anti-Violence Advocacy), it is essential to systematically analyze the given facts and constraints:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Artist A's Contribution:\n   - Created a work promoting Economic Equality."
+      },
+      {
+        "step_number": 3,
+        "description": "- The work is not a song, implying it is a poster."
+      },
+      {
+        "step_number": 4,
+        "description": "Voter Registration Poster:\n   - Potential creators are Artist B or Artist D."
+      },
+      {
+        "step_number": 5,
+        "description": "\"Freedom Voices\":\n   - Identified as a song linked to Anti-Violence Advocacy."
+      },
+      {
+        "step_number": 6,
+        "description": "Artist C's Affiliation:\n   - Did not create any work associated with Desegregation."
+      }
+    ],
+    "golden_final_answer": "This systematic approach ensures that each artist is accurately matched to their respective creation and the social movement it supports, adhering strictly to the provided constraints.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "affiliation",
+        "voices",
+        "linked",
+        "freedom",
+        "contribution",
+        "facts",
+        "movement",
+        "registration",
+        "essential",
+        "constraints"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0018",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyra is conducting a study to investigate how emotional framing influences individuals' assessment of financial investment risks under uncertainty. She designs an experiment with the following variables:\n\n1. Emotional Framing: Positive framing emphasizing potential gains, or negative framing emphasizing potential losses.\n2. Information Clarity: High clarity with detailed information, or low clarity with vague information.\n\nShe recruits participants with varying levels of financial expertise: Experts and Novices. Each participant is exposed to one type of emotional framing and one level of information clarity, resulting in four distinct experimental conditions:\n\n- Condition A: Positive framing with high clarity\n- Condition B: Positive framing with low clarity\n- Condition C: Negative framing with high clarity\n- Condition D: Negative framing with low clarity\n\nZephyra has collected the following data:\n\n- In Condition A, experts showed a 15% higher risk assessment compared to novices.\n- In Condition B, experts showed no significant difference in risk assessment compared to novices.\n- In Condition C, novices showed a 20% higher risk assessment compared to experts.\n- In Condition D, both experts and novices showed no significant difference in risk assessment.\n\nZephyra aims to determine whether emotional framing interacts with information clarity and participant expertise to influence risk assessment, potentially through cognitive biases.\n\nGiven the constraints of her experimental design and the observed data, identify which of the following conclusions can be logically inferred:\n\nA) Positive emotional framing increases risk assessment more in experts than novices only when information clarity is high.\n\nB) Negative emotional framing decreases risk assessment in novices regardless of information clarity.\n\nC) Information clarity has no effect on risk assessment when emotional framing is negative.\n\nD) Experts are generally more sensitive to emotional framing than novices.\n\nWhich conclusion(s) is(are) supported by the data?",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine which of the proposed conclusions are supported by Zephyra's data, it is essential to analyze the interactions between the three primary variables: emotional framing (positive vs."
+      },
+      {
+        "step_number": 2,
+        "description": "negative), information clarity (high vs."
+      },
+      {
+        "step_number": 3,
+        "description": "low), and participant expertise (experts vs."
+      },
+      {
+        "step_number": 4,
+        "description": "The analysis should focus on how these variables influence risk assessment differently across the four experimental conditions (A, B, C, D)."
+      },
+      {
+        "step_number": 5,
+        "description": "Key considerations include:\n\n1."
+      },
+      {
+        "step_number": 6,
+        "description": "Interaction Effects: Assess whether the combination of emotional framing and information clarity interacts differently with participant expertise to influence risk assessment."
+      }
+    ],
+    "golden_final_answer": "Only Conclusion A is supported by the data.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "emotional",
+        "interaction",
+        "focus",
+        "supported",
+        "assessment",
+        "three",
+        "clarity",
+        "interacts",
+        "participant",
+        "zephyra"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0019",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Alaric is compiling a list of significant Russian literary works to analyze their linguistic and thematic elements. He has identified three authors: Alexander Pushkin, Leo Tolstoy, and Fyodor Dostoevsky. Additionally, he has three major works that need to be accurately attributed to each author. Alaric has gathered the following information:\n\n1. \"War and Peace\" was published before \"Crime and Punishment.\"\n2. Pushkin did not author \"War and Peace.\"\n3. Dostoevsky is responsible for the later of the two works mentioned.\n4. \"Eugene Onegin\" is not the earliest published work among the three.\n\nProblem Statement:\nBased on the above facts, determine which author wrote each of the following works:\n- \"War and Peace\"\n- \"Crime and Punishment\"\n- \"Eugene Onegin\"\n\nRelevant Facts, Constraints, and Rules:\n- There are three authors: Pushkin, Tolstoy, and Dostoevsky.\n- There are three works to be attributed: \"War and Peace,\" \"Crime and Punishment,\" and \"Eugene Onegin.\"\n- \"War and Peace\" was published before \"Crime and Punishment.\"\n- Pushkin did not write \"War and Peace.\"\n- Dostoevsky wrote the later work (\"Crime and Punishment\").\n- \"Eugene Onegin\" is not the earliest published work.\n\nQuestion:\nAssign each of the three works (\"War and Peace,\" \"Crime and Punishment,\" \"Eugene Onegin\") to the correct author (Pushkin, Tolstoy, Dostoevsky) based on the provided information.\n\nSolution:\n1. From fact 3, Dostoevsky authored the later work, which is \"Crime and Punishment.\"\n2. From fact 1, \"War and Peace\" was published before \"Crime and Punishment.\"\n3. From fact 2, Pushkin did not author \"War and Peace,\" so Tolstoy must be the author of \"War and Peace.\"\n4. \"Eugene Onegin\" is the remaining work and, from fact 4, is not the earliest, so Pushkin authored \"Eugene Onegin.\"\n\nFinal Assignments:\n- \"War and Peace\" - Leo Tolstoy\n- \"Crime and Punishment\" - Fyodor Dostoevsky\n- \"Eugene Onegin\" - Alexander Pushkin",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To accurately attribute each literary work to its respective author, it is essential to meticulously analyze the provided facts and constraints."
+      },
+      {
+        "step_number": 2,
+        "description": "The problem presents three authors-Alexander Pushkin, Leo Tolstoy, and Fyodor Dostoevsky-and three significant works: \"War and Peace,\" \"Crime and Punishment,\" and \"Eugene Onegin.\" The key considerations involve:\n\n1."
+      },
+      {
+        "step_number": 3,
+        "description": "Chronological Publication Order: Understanding the sequence in which the works were published to determine the timeline of authorship."
+      },
+      {
+        "step_number": 4,
+        "description": "Author Exclusions: Recognizing which authors did not write specific works to narrow down the possibilities."
+      },
+      {
+        "step_number": 5,
+        "description": "Remaining Assignments: Assigning the remaining work to the authors after applying the exclusions and chronological order."
+      },
+      {
+        "step_number": 6,
+        "description": "Logical Deduction: Employing logical reasoning to ensure that all constraints are satisfied without contradictions."
+      }
+    ],
+    "golden_final_answer": "This systematic approach ensures that each work is accurately attributed to the correct author based on the provided information and constraints.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "authorship",
+        "narrow",
+        "tolstoy",
+        "pushkin",
+        "three",
+        "write",
+        "deduction",
+        "without",
+        "applying",
+        "works"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0020",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyra is leading an interdisciplinary team in a regenerative medicine project aimed at developing a novel biomaterial for treating diabetic foot ulcers. The team comprises biomaterials scientists, clinical researchers, and data analysts. They have narrowed down their options to three candidate biomaterials: Material A, Material B, and Material C. Each material has distinct properties in terms of biocompatibility, degradation rate, cost, and efficacy in promoting tissue regeneration.\n\nRelevant Facts and Constraints:\n- Material A\n  - Biocompatibility: High\n  - Degradation Rate: Rapid\n  - Cost: Highest among the three\n  - Tissue Regeneration Efficacy: High\n- Material B\n  - Biocompatibility: Low\n  - Degradation Rate: Moderate\n  - Cost: Moderate\n  - Tissue Regeneration Efficacy: Moderate\n- Material C\n  - Biocompatibility: Balanced\n  - Degradation Rate: Slowest\n  - Cost: Lowest\n  - Tissue Regeneration Efficacy: Balanced\n- Project Constraints\n  - Limited budget that excludes the selection of Material A.\n  - Treatment must support tissue regeneration for a minimum of six weeks.\n  - The biomaterial must not cause adverse immune reactions in at least 90% of patients.\n\nProblem Statement:\nGiven the properties of Materials A, B, and C, along with the project's budgetary and clinical constraints, which biomaterial should Zephyra's team select to optimize cost-effectiveness while ensuring adequate tissue regeneration and patient safety? Provide a logical rationale for your choice based on the given factors.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "In addressing the selection of an appropriate biomaterial for treating diabetic foot ulcers, several critical factors must be evaluated to align with the project's objectives and constraints:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Budgetary Constraints: Material A is excluded due to its highest cost, necessitating a focus on Materials B and C, which are moderately and lowest priced, respectively."
+      },
+      {
+        "step_number": 3,
+        "description": "Biocompatibility: Ensuring patient safety by minimizing adverse immune reactions is paramount."
+      },
+      {
+        "step_number": 4,
+        "description": "Material B exhibits low biocompatibility, which may increase the risk of immune responses, whereas Material C offers balanced biocompatibility, enhancing its suitability."
+      },
+      {
+        "step_number": 5,
+        "description": "Degradation Rate: The treatment requires sustained support for tissue regeneration over a minimum of six weeks."
+      },
+      {
+        "step_number": 6,
+        "description": "Material B's moderate degradation rate may not provide adequate support for this duration, whereas Material C's slowest degradation rate better aligns with the treatment timeline."
+      }
+    ],
+    "golden_final_answer": "In summary, Material C satisfies all critical project constraints by providing a cost-effective, biocompatible, and sufficiently durable solution for tissue regeneration. Its balanced properties make it the most suitable choice for Zephyra's team to advance their regenerative medicine project successfully.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "diabetic",
+        "balanced",
+        "offers",
+        "focus",
+        "treating",
+        "immune",
+        "support",
+        "patient",
+        "ulcers"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0021",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Artan is organizing a national poetry symposium aimed at blending traditional cultural themes with contemporary literary techniques. He has invited five poets-Aarav, Bela, Chandra, Dev, and Esha-to present their works. Each poet specializes in integrating specific elements of Indian cultural heritage into modern poetry, but each must focus on a distinct cultural aspect without overlapping with others. The cultural aspects to be represented are:\n\n1. Folktales\n2. Classical Music\n3. Traditional Festivals\n4. Mythological Epics\n5. Artisan Crafts\n\nAdditionally, each poet prefers to highlight their chosen cultural aspect in either a narrative poem, a free verse, a sonnet, a ghazal, or a haiku. The following constraints apply:\n\n- Aarav does not work with mythological themes and prefers structured forms.\n- The poet focusing on traditional festivals is delivering a free verse poem.\n- Chandra specializes in either mythological epics or folktales but does not use haiku.\n- Dev is presenting a sonnet but does not incorporate classical music.\n- Esha's work revolves around artisan crafts and is not a narrative poem.\n- Bela prefers a ghazal and does not focus on classical music or mythological epics.\n\nProblem:  \nDetermine which cultural aspect each poet is presenting and identify the poetic form they are using.\n\nRelevant Facts and Constraints:\n\n1. Five poets: Aarav, Bela, Chandra, Dev, Esha.\n2. Five cultural aspects: Folktales, Classical Music, Traditional Festivals, Mythological Epics, Artisan Crafts.\n3. Five poetic forms: Narrative Poem, Free Verse, Sonnet, Ghazal, Haiku.\n4. Aarav: Not mythological, prefers structured forms (Sonnet or Ghazal).\n5. Traditional Festivals: Free verse.\n6. Chandra: Either Mythological Epics or Folktales; does not use Haiku.\n7. Dev: Uses Sonnet; does not incorporate Classical Music.\n8. Esha: Artisan Crafts; not a Narrative Poem.\n9. Bela: Uses Ghazal; does not focus on Classical Music or Mythological Epics.\n\nTask:  \nAssign each poet to their respective cultural aspect and poetic form, ensuring all constraints are satisfied.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the appropriate assignments of cultural aspects and poetic forms to each poet, we must systematically analyze the given constraints."
+      },
+      {
+        "step_number": 2,
+        "description": "Identifying Fixed Assignments: Some poets have specific preferences or restrictions that directly assign them to particular cultural aspects or poetic forms."
+      },
+      {
+        "step_number": 3,
+        "description": "Eliminating Incompatible Options: Using the constraints to exclude certain combinations ensures that only feasible assignments remain."
+      },
+      {
+        "step_number": 4,
+        "description": "Sequential Deduction: Start with the most restrictive constraints to narrow down possibilities, then proceed to less restrictive ones."
+      },
+      {
+        "step_number": 5,
+        "description": "Ensuring Uniqueness: Each cultural aspect and poetic form must be uniquely assigned, preventing overlaps."
+      },
+      {
+        "step_number": 6,
+        "description": "Final Solution:\nWe begin by listing all poets, cultural aspects, and poetic forms:\n\nPoets: Aarav, Bela, Chandra, Dev, Esha  \nCultural Aspects: Folktales, Classical Music, Traditional Festivals, Mythological Epics, Artisan Crafts  \nPoetic Forms: Narrative Poem, Free Verse, Sonnet, Ghazal, Haiku\n\nConstraints Recap:\n1."
+      }
+    ],
+    "golden_final_answer": "- Esha focuses on artisan crafts using a haiku, avoiding narrative forms.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "uniqueness",
+        "overlaps",
+        "remain",
+        "narrow",
+        "deduction",
+        "begin",
+        "listing",
+        "ensuring",
+        "traditional",
+        "forms"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0022",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Professor Amelie is examining the historical development of four European cities, each uniquely shaped by their geographical landscapes and climatic conditions. She aims to understand how these factors influenced significant historical events and, consequently, the evolution of their urban centers. The cities under study-Aurora, Borealis, Celestria, and Delphinus-are located in distinct regions with varying topographies and climates, each having undergone pivotal moments that have left lasting impacts on their sustainability practices today.\n\nFacts, Constraints, and Rules:\n\n1. Geographical Locations and Climates:\n   - Aurora is situated in a river delta with a temperate maritime climate.\n   - Borealis lies in a highland area experiencing a continental climate with harsh winters.\n   - Celestria is located on a coastal plain with a Mediterranean climate.\n   - Delphinus occupies a basin surrounded by mountain ranges, characterized by an arid climate.\n\n2. Historical Events:\n   - Aurora was significantly affected by a major flood in the 18th century, leading to the development of advanced water management systems.\n   - Borealis served as a key military fortress during the 19th century, which influenced its fortified urban layout and infrastructure.\n   - Celestria became a prominent trading hub during the Renaissance, enhancing its port facilities and commercial districts.\n   - Delphinus experienced a severe drought in the early 20th century, prompting innovations in water conservation and resource management.\n\n3. Current Sustainability Practices:\n   - Aurora is renowned for its comprehensive flood defense mechanisms and sustainable riverfront development.\n   - Borealis has implemented energy-efficient heating systems and robust snow management strategies.\n   - Celestria focuses on sustainable maritime activities and eco-friendly port operations.\n   - Delphinus excels in water recycling technologies and sustainable desert agriculture.\n\n4. Constraints:\n   - Each city's sustainability practice is a direct response to its historical event and is influenced by its geographic and climatic conditions.\n   - No two cities share the same type of sustainability practice or historical event.\n   - The sustainability practice of each city directly addresses the challenges posed by its specific geography and climate.\n\nTask:\n\nUsing logical reasoning, determine which sustainability practice corresponds to each city based on the provided geographical, climatic, and historical information. Ensure that each city's current sustainability initiative directly addresses the historical challenges it faced, aligned with its unique geographical and climatic context.\n\nQuestion:\n\nAssign each city-Aurora, Borealis, Celestria, and Delphinus-to its appropriate current sustainability practice: comprehensive flood defense mechanisms and sustainable riverfront development, energy-efficient heating systems and robust snow management strategies, sustainable maritime activities and eco-friendly port operations, or water recycling technologies and sustainable desert agriculture. Provide a logical explanation for each assignment based on the historical events and geographical factors outlined above.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To accurately assign each sustainability practice to Aurora, Borealis, Celestria, and Delphinus, we must analyze the interplay between their geographical locations, climatic conditions, historical events, and the resultant sustainability initiatives."
+      },
+      {
+        "step_number": 2,
+        "description": "Each city's unique environment and historical challenges have directly influenced its current sustainability practices."
+      },
+      {
+        "step_number": 3,
+        "description": "The key is to ensure that the sustainability measures not only address the specific historical events but also align seamlessly with the geographical and climatic contexts of each city."
+      },
+      {
+        "step_number": 4,
+        "description": "- Aurora is located in a river delta with a temperate maritime climate and experienced a major flood in the 18th century."
+      },
+      {
+        "step_number": 5,
+        "description": "This suggests a need for robust water management and flood prevention."
+      },
+      {
+        "step_number": 6,
+        "description": "- Borealis is situated in a highland area with a continental climate marked by harsh winters."
+      }
+    ],
+    "golden_final_answer": "Each city's current sustainability practice is a direct and logical response to its unique historical challenges and environmental conditions, ensuring that their evolution towards sustainability is both coherent and contextually appropriate.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "located",
+        "historical",
+        "initiatives",
+        "seamlessly",
+        "practices",
+        "practice",
+        "climate",
+        "flood",
+        "contexts",
+        "current"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0023",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is preparing to launch a new digital storytelling campaign aimed at engaging a diverse online audience interested in sustainable living. The campaign will utilize multiple social media platforms, collaborate with different creatives, and incorporate emerging technologies to create an immersive experience. Zephyr must strategically plan the campaign to ensure maximum reach and engagement within the given constraints.\n\nProblem:\n\nZephyr has the following resources and constraints for the campaign:\n\n- Social Media Platforms Available: Instagram, Twitter, TikTok, YouTube, and a dedicated blog.\n- Collaborators: Three creatives are available to assist:\n  - Alex, a graphic designer specializing in interactive content.\n  - Jamie, a videographer experienced with virtual reality (VR) storytelling.\n  - Sam, a writer proficient in SEO and niche topic research.\n- Emerging Technologies to Incorporate: Augmented Reality (AR) filters and live-streaming with real-time audience interaction.\n- Budget Constraint: The total budget for the campaign is $15,000, allocated as follows:\n  - Platform advertising: $5,000\n  - Technology integration: $4,000\n  - Collaborator fees: $5,000\n  - Miscellaneous expenses: $1,000\n- Timeline: The campaign must be developed and launched within 8 weeks.\n- Engagement Goals: Achieve at least a 20% increase in followers across all platforms and a minimum average engagement rate of 5% per post.\n\nQuestion:\n\nHow should Zephyr allocate the budget and assign tasks to the collaborators while selecting the appropriate social media platforms and integrating the emerging technologies to meet the campaign's engagement goals within the 8-week timeline?",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "When strategizing Zephyr's digital storytelling campaign, several critical factors must be evaluated:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Platform Suitability: Each social media platform has unique strengths."
+      },
+      {
+        "step_number": 3,
+        "description": "Instagram and TikTok are visual-centric, ideal for AR filters and interactive content."
+      },
+      {
+        "step_number": 4,
+        "description": "YouTube supports long-form video and VR storytelling, while Twitter is effective for real-time engagement and updates."
+      },
+      {
+        "step_number": 5,
+        "description": "A dedicated blog serves as a hub for detailed content and SEO optimization."
+      },
+      {
+        "step_number": 6,
+        "description": "Collaborator Expertise:\n   - Alex (Graphic Designer): Best utilized in creating interactive and visually engaging AR filters for Instagram and TikTok."
+      }
+    ],
+    "golden_final_answer": "By strategically allocating resources, leveraging collaborator expertise, and effectively integrating emerging technologies, Zephyr can successfully launch a compelling digital storytelling campaign that resonates with a diverse online audience interested in sustainable living.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "video",
+        "utilized",
+        "detailed",
+        "visually",
+        "platform",
+        "unique",
+        "effective",
+        "supports",
+        "several"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0024",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyra has been assigned to overhaul the company's budgeting process to enhance accuracy and ensure adherence to newly implemented regulatory standards. The organization comprises three primary departments: Sales, Operations, and Research & Development (R&D). Each department presents unique budgeting needs and operates on distinct reporting schedules.\n\nRelevant Facts, Constraints, or Rules:\n\n1. Unified Budget Deadline: All departmental budgets must be consolidated into a single company-wide budget within a four-week timeframe.\n2. Sales Department:\n   - Budget finalization is required within the first two weeks.\n   - Alignment with upcoming quarterly sales strategies is essential.\n3. Operations Department:\n   - Requires a minimum of one week for budget review and potential adjustments following the initial submission.\n4. R&D Department:\n   - Reporting timeline is variable, ranging between two to three weeks based on project complexity.\n5. Compliance Requirements:\n   - All budgets must comply with new financial regulations.\n   - Mandatory thorough documentation and approval from the compliance officer are required before finalization.\n6. Resource Allocation:\n   - Zephyra can allocate a maximum of two financial strategists to oversee the entire budgeting process to maintain resource efficiency.\n\nQuestion:\n\nDevelop an optimal four-week schedule for Zephyra and her two financial strategists to efficiently collect, review, and consolidate the budgets from the Sales, Operations, and R&D departments. The schedule must respect each department's specific timelines, ensure all compliance requirements are satisfied, and maximize the effective use of available resources.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To develop an optimal four-week schedule for Zephyra and her two financial strategists, the following key factors must be addressed:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Departmental Timelines:\n   - Sales: Requires budget finalization within the first two weeks to align with quarterly sales strategies."
+      },
+      {
+        "step_number": 3,
+        "description": "- Operations: Needs an initial submission followed by a minimum one-week review and potential adjustments."
+      },
+      {
+        "step_number": 4,
+        "description": "- R&D: Possesses a variable reporting timeline of two to three weeks based on project complexity."
+      },
+      {
+        "step_number": 5,
+        "description": "Compliance Requirements:\n   - All budgets must adhere to new financial regulations."
+      },
+      {
+        "step_number": 6,
+        "description": "- Comprehensive documentation and approval from the compliance officer are mandatory before finalization."
+      }
+    ],
+    "golden_final_answer": "By adhering to this structured approach, the budgeting process accommodates each department's unique requirements, ensures compliance with regulatory standards, and efficiently utilizes the limited financial strategists' resources to meet the unified four-week deadline.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "finalization",
+        "comprehensive",
+        "regulations",
+        "operations",
+        "schedule",
+        "addressed",
+        "needs",
+        "review",
+        "develop"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0025",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyra is leading a project to develop an AI-driven hiring system for a large multinational company. The goal is to create a predictive model that assesses candidates based on their resumes and ranks them for interviews. However, the company is committed to ensuring that the hiring process is fair and transparent, minimizing any potential biases related to gender, ethnicity, and educational background.\n\nThe company has provided the following parameters for the AI model:\n\n1. Candidate Data: Each candidate's resume includes information on their gender, ethnicity, education level, years of relevant experience, and a list of skills.\n2. Performance Metrics:\n   - Accuracy: The model should correctly identify qualified candidates 90% of the time.\n   - Fairness Constraint: The selection rate for each gender and ethnicity group must not deviate by more than 5% from the overall selection rate.\n3. Transparency Requirement: The model must provide a clear explanation for each decision, detailing which resume features influenced the ranking.\n4. Resource Allocation: The company can interview only 100 candidates per month, and there are currently 1,500 applicants.\n\nGiven the following additional information:\n\n- Historically, the company's hiring process has shown a 10% underrepresentation of a particular ethnic group.\n- Candidates with a master's degree have a 15% higher average ranking than those with a bachelor's degree, irrespective of other factors.\n- Experience years and skill sets are currently uncorrelated with gender and ethnicity in the applicant pool.\n\nProblem Statement:\n\nDesign a logical approach for Zephyra to adjust the AI hiring model to meet the company's fairness and transparency requirements without compromising the accuracy of candidate selection. Specifically, determine how Zephyra can modify the weighting of education level in the model to address the historical underrepresentation while adhering to the given constraints.\n\nRelevant Facts, Constraints, and Rules:\n\n1. The AI model must maintain at least 90% accuracy in identifying qualified candidates.\n2. The selection rate for each gender and ethnicity group must not vary by more than +/-5% from the overall selection rate.\n3. Transparency requires that the model explains the influence of each resume feature on the ranking.\n4. Only 100 out of 1,500 applicants can be interviewed monthly.\n5. Historically, there is a 10% underrepresentation of a specific ethnic group in hiring outcomes.\n6. A master's degree contributes to a 15% higher ranking than a bachelor's degree, regardless of other factors.\n7. Experience years and skill sets are not currently biased concerning gender and ethnicity.\n\nTask:\n\nFormulate a step-by-step strategy that Zephyra can implement to adjust the education level weighting in the AI model. Ensure that this adjustment addresses the 10% historical underrepresentation of the specific ethnic group while maintaining the fairness constraint (+/-5% selection rate deviation) and the model's overall accuracy. Provide a logical sequence of actions and justifications based on the given facts and constraints.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "When addressing the adjustment of education level weighting in the AI-driven hiring system, several key factors must be evaluated to ensure compliance with the company's fairness and transparency requirements:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Bias Mitigation: The historical 10% underrepresentation of a specific ethnic group suggests potential systemic bias."
+      },
+      {
+        "step_number": 3,
+        "description": "Adjusting the education level weighting must counteract this bias without introducing new biases."
+      },
+      {
+        "step_number": 4,
+        "description": "Fairness Constraints: The model must maintain selection rate deviations within +/-5% across all gender and ethnicity groups."
+      },
+      {
+        "step_number": 5,
+        "description": "Any adjustments to feature weighting should not disproportionately affect these groups."
+      },
+      {
+        "step_number": 6,
+        "description": "Model Accuracy: Ensuring that the model retains at least 90% accuracy in identifying qualified candidates is paramount."
+      }
+    ],
+    "golden_final_answer": "By systematically implementing these steps, Zephyra can effectively adjust the education level weighting in the AI hiring model to address historical underrepresentation, uphold fairness constraints, maintain high accuracy, and ensure transparency in the hiring process.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "historical",
+        "fairness",
+        "qualified",
+        "maintain",
+        "ensuring",
+        "without",
+        "level",
+        "transparency",
+        "mitigation"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0026",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Bramble is preparing a week-long dance workshop for a diverse group of senior participants. She aims to create a schedule that accommodates each participant's preferred dance style and availability while ensuring that no two classes of the same style overlap, and that each participant attends at least three different styles.\n\nRelevant Facts, Constraints, and Rules:\n1. There are four dance styles to be offered: Ballroom, Salsa, Tap, and Contemporary.\n2. Each day of the workshop has three one-hour time slots: Morning, Afternoon, and Evening.\n3. Five participants are attending: Alice, Bob, Carol, David, and Eve.\n4. \n   - Alice prefers Ballroom and Salsa.\n   - Bob prefers Salsa and Tap.\n   - Carol prefers Tap and Contemporary.\n   - David prefers Ballroom and Contemporary.\n   - Eve prefers Ballroom, Tap, and Contemporary.\n5. \n   - Each participant must attend at least three different dance styles.\n   - No dance style can have more than one class running simultaneously.\n   - Each dance style must be taught at least twice during the workshop week.\n\nProblem:\nDetermine a schedule for the five-day workshop that assigns each dance style to specific time slots each day and allocates participants to their preferred classes. Ensure that all constraints are met, and specify which participants attend which classes each day.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To develop an effective schedule for Bramble's week-long dance workshop, several key factors must be meticulously addressed:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Dance Styles and Frequency: With four dance styles (Ballroom, Salsa, Tap, Contemporary) and the requirement that each style is taught at least twice during the week, careful distribution across the five days is essential to ensure coverage and variety."
+      },
+      {
+        "step_number": 3,
+        "description": "Time Slot Allocation: Each day offers three one-hour time slots (Morning, Afternoon, Evening)."
+      },
+      {
+        "step_number": 4,
+        "description": "Allocating different dance styles to these slots without overlapping the same style concurrently is crucial to maximize participant access and instructor availability."
+      },
+      {
+        "step_number": 5,
+        "description": "Participant Preferences and Requirements: Five participants with diverse preferences necessitate a schedule that accommodates their preferred styles while ensuring each attends at least three different styles."
+      },
+      {
+        "step_number": 6,
+        "description": "Balancing these preferences with the overall schedule constraints is vital for participant satisfaction and engagement."
+      }
+    ],
+    "golden_final_answer": "This schedule ensures all constraints are met, providing a balanced and accommodating structure for Bramble's diverse group of senior participants.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "access",
+        "workshop",
+        "offers",
+        "concurrently",
+        "afternoon",
+        "schedule",
+        "addressed",
+        "coverage",
+        "three"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0027",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zyra, an acquisitions specialist at a forward-thinking publishing house, is in the process of curating a new collection of novels that align with the company's strategic goals for the upcoming fiscal year. She has received submissions from six diverse authors, each presenting unique genres and storytelling styles. The goal is to select a combination of these manuscripts that not only resonates with emerging literary trends but also satisfies the publishing house's market and diversity objectives within the allocated budget.\n\nRelevant Facts and Constraints:\n1. Manuscripts Available:\n   - Novel A: Genre - Science Fiction; Projected Revenue - $150,000; Advance Required - $40,000; Author Background - Emerging.\n   - Novel B: Genre - Historical Fiction; Projected Revenue - $120,000; Advance Required - $35,000; Author Background - Diverse.\n   - Novel C: Genre - Mystery; Projected Revenue - $100,000; Advance Required - $30,000; Author Background - Emerging.\n   - Novel D: Genre - Fantasy; Projected Revenue - $130,000; Advance Required - $45,000; Author Background - Diverse.\n   - Novel E: Genre - Contemporary Romance; Projected Revenue - $90,000; Advance Required - $25,000; Author Background - Established.\n   - Novel F: Genre - Thriller; Projected Revenue - $110,000; Advance Required - $35,000; Author Background - Established.\n\n2. Budget Constraint: The total budget available for advances is $150,000.\n\n3. Strategic Objectives:\n   - Diversity Goal: At least two manuscripts must be from authors with diverse backgrounds.\n   - Genre Balance: No more than two manuscripts can belong to the same genre category.\n   - Revenue Maximization: Aim to maximize the total projected revenue from the selected manuscripts.\n\n4. Additional Rules:\n   - If selecting a novel from an emerging author, prioritize genres that are currently trending.\n   - Established authors' manuscripts should only be selected if they contribute significantly to the revenue goals.\n\nProblem:\nDetermine which combination of manuscripts Zyra should acquire to meet the publishing house's budget and strategic objectives. Ensure that the selected manuscripts adhere to the diversity and genre balance requirements while maximizing the total projected revenue.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "Evaluate Manuscript Attributes"
+      },
+      {
+        "step_number": 2,
+        "description": "Identify Potential Combinations"
+      },
+      {
+        "step_number": 3,
+        "description": "Optimal Selection"
+      }
+    ],
+    "golden_final_answer": "By selecting Manuscripts A, B, C, and D, Zyra effectively navigates the budgetary constraints, satisfies the diversity and genre balance requirements, and maximizes the projected revenue, thereby aligning with the publishing house's strategic goals for the upcoming fiscal year.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "manuscript",
+        "selection",
+        "optimal",
+        "identify",
+        "evaluate",
+        "potential",
+        "combinations",
+        "attributes"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0028",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Brixton is preparing a special two-hour broadcast to celebrate the annual harvest festival in Saint Pierre and Miquelon. He aims to feature interviews that highlight the island's traditional crafts, culinary specialties, and environmental conservation efforts. To create a balanced and engaging program, Brixton plans to divide the broadcast into four 30-minute segments. Each segment must include one artisan, one chef, and one environmentalist.\n\nRelevant Facts, Constraints, and Rules:\n\n1. Available Guests and Their Availability:\n   - Artisans:\n     - *Potter A* is available during Segment 1 or Segment 3.\n     - *Potter B* is available during Segment 2 or Segment 4.\n   - Chefs:\n     - *Chef A* is available during Segment 1 or Segment 2.\n     - *Chef B* is available during Segment 3 or Segment 4.\n   - Environmentalists:\n     - *Environmentalist A* is available during Segment 2 or Segment 4.\n     - *Environmentalist B* is available during Segment 1 or Segment 3.\n\n2. Scheduling Requirements:\n   - Each of the four segments must feature exactly one artisan, one chef, and one environmentalist.\n   - No guest can appear more than once in the entire broadcast.\n   - The environmentalist featured in Segment 1 cannot be Environmentalist B.\n\nProblem Statement:\n\nDetermine a feasible schedule that assigns each of the eight guests to the four 30-minute segments of Brixton's broadcast. The schedule must ensure that:\n\n- Each segment includes one artisan, one chef, and one environmentalist.\n- Each guest is assigned to only one segment.\n- Environmentalist B is not assigned to Segment 1.\n\nProvide the assignment of guests to each segment that satisfies all the above constraints.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "Assign Environmentalists"
+      },
+      {
+        "step_number": 2,
+        "description": "Assign Artisans"
+      },
+      {
+        "step_number": 3,
+        "description": "Assign Chefs"
+      },
+      {
+        "step_number": 4,
+        "description": "Finalizing Environmentalists and Artisans"
+      }
+    ],
+    "golden_final_answer": "After systematically evaluating the available options and constraints, it becomes evident that a feasible schedule adhering to all specified requirements does not exist. The primary conflict arises from the inability to assign an environmentalist to Segment 1 without violating the restriction on Environmentalist B. Therefore, Brixton may need to reassess either the guest availability or the segment structure to achieve a balanced and compliant broadcast schedule.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "artisans",
+        "assign",
+        "environmentalists",
+        "chefs",
+        "finalizing"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0029",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zyra has been assigned to design the cloud infrastructure for a new scalable web application her team is developing. The application is built using JavaScript for the front-end and Ruby for the back-end services. The team aims to deploy the application on AWS to ensure high availability and scalability while maintaining cost efficiency. Additionally, they plan to implement a DevOps pipeline to streamline deployments and operations.\n\nProblem Statement:\nDesign an AWS-based architecture for Zyra's web application that meets the following requirements and constraints. Identify the appropriate AWS services to use, ensure scalability and high availability, and outline a DevOps strategy that integrates continuous integration and continuous deployment (CI/CD).\n\nRelevant Facts, Constraints, and Rules:\n1. Application Requirements:\n   - Front-end developed in JavaScript, served as a single-page application.\n   - Back-end services developed in Ruby, handling RESTful APIs.\n   - The application should support up to 10,000 concurrent users with the ability to scale based on demand.\n   - Data storage must ensure low latency and high throughput for database operations.\n\n2. AWS Services Constraints:\n   - Use AWS Elastic Beanstalk for deploying the back-end Ruby applications.\n   - Utilize Amazon S3 for storing static assets of the front-end application.\n   - Implement Amazon RDS for the relational database component.\n   - Incorporate Amazon CloudFront as a Content Delivery Network (CDN) for the front-end.\n   - Ensure that the architecture is cost-effective without compromising performance.\n\n3. DevOps Pipeline Requirements:\n   - Set up a CI/CD pipeline using AWS CodePipeline and AWS CodeBuild.\n   - Automate testing and deployment processes for both front-end and back-end codebases.\n   - Ensure zero downtime deployments and the ability to roll back in case of failures.\n   - Monitor application performance and infrastructure health using AWS CloudWatch.\n\n4. Additional Constraints:\n   - Security best practices must be followed, including the use of IAM roles and security groups.\n   - The solution should be highly available across at least two AWS Availability Zones.\n   - Implement auto-scaling policies to handle traffic spikes efficiently.\n\nTask:\nProvide a detailed architectural diagram and explanation outlining how Zyra should configure the AWS services to meet the application's requirements and constraints. Describe how the CI/CD pipeline will be set up to ensure smooth and reliable deployments. Additionally, explain the auto-scaling strategy and how high availability is achieved within the proposed architecture.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "Designing an AWS-based architecture for Zyra's scalable web application requires a comprehensive understanding of the application's functional requirements, AWS service constraints, and DevOps pipeline necessities."
+      },
+      {
+        "step_number": 2,
+        "description": "Key considerations include ensuring high availability and scalability to support up to 10,000 concurrent users, maintaining low latency and high throughput for database operations, and adhering to security best practices."
+      },
+      {
+        "step_number": 3,
+        "description": "The architecture must leverage specified AWS services-Elastic Beanstalk for the Ruby back-end, Amazon S3 and CloudFront for the JavaScript front-end, and Amazon RDS for the database-while optimizing for cost efficiency."
+      },
+      {
+        "step_number": 4,
+        "description": "Additionally, establishing a robust CI/CD pipeline using AWS CodePipeline and CodeBuild is essential to automate testing and deployments, achieve zero downtime, and facilitate quick rollbacks."
+      },
+      {
+        "step_number": 5,
+        "description": "Ensuring the solution is distributed across multiple Availability Zones and incorporates auto-scaling policies will address traffic variability and enhance fault tolerance."
+      },
+      {
+        "step_number": 6,
+        "description": "Final Solution:\nTo design a resilient, scalable, and cost-effective AWS architecture for Zyra's web application, the following components and strategies should be employed:\n\n1."
+      }
+    ],
+    "golden_final_answer": "By integrating these AWS services and strategies, Zyra can achieve a scalable, highly available, and secure architecture tailored to the application's requirements. The CI/CD pipeline ensures efficient and reliable deployments, while auto-scaling and multi-AZ deployments address performance and availability needs. Adhering to security best practices and optimizing for cost without compromising performance further solidifies the robustness of the proposed solution.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "operations",
+        "application",
+        "architecture",
+        "scalability",
+        "availability",
+        "efficiency",
+        "policies",
+        "scaling",
+        "essential",
+        "robust"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0030",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is organizing a series of mental health workshops aimed at supporting different vulnerable groups within the community. The community center has three available time slots each week: Monday evening, Wednesday afternoon, and Saturday morning. Zephyr has identified four target groups to serve: teenagers, veterans, single parents, and elderly individuals. Each group requires two workshop sessions per month. Additionally, there are four qualified speakers available, each specializing in one of the target groups. However, each speaker can only conduct one workshop per week due to other commitments.\n\nRelevant facts and constraints:\n1. The workshops must be evenly distributed across the three available time slots each week.\n2. No two workshops for the same target group can be scheduled in the same week.\n3. Each speaker is only qualified to lead workshops for their designated target group.\n4. All target groups must receive exactly two workshop sessions per month.\n5. The month consists of four weeks.\n\nQuestion:\nDevelop a weekly workshop schedule that assigns each target group to appropriate time slots and speakers, ensuring all constraints are met. Provide the assignment of target groups to time slots and speakers for each week of the month.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "When developing the workshop schedule, several key factors and constraints must be meticulously addressed to ensure an effective and equitable distribution of resources:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Time Slot Distribution: With three available time slots each week and a need for an even distribution, it is essential to allocate workshops across all slots to maximize accessibility and avoid overburdening any particular time."
+      },
+      {
+        "step_number": 3,
+        "description": "Target Group Scheduling: Each of the four target groups requires two sessions per month."
+      },
+      {
+        "step_number": 4,
+        "description": "Since the month comprises four weeks, each group will have workshops in two separate weeks, ensuring no overlap within the same week."
+      },
+      {
+        "step_number": 5,
+        "description": "Speaker Allocation: There are four specialized speakers, each dedicated to one target group."
+      },
+      {
+        "step_number": 6,
+        "description": "Given that each speaker can conduct only one workshop per week, careful coordination is necessary to align speaker availability with workshop scheduling."
+      }
+    ],
+    "golden_final_answer": "This structured approach ensures that all constraints are satisfied while providing a balanced and accessible workshop schedule for the community's vulnerable groups.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "workshop",
+        "comprises",
+        "schedule",
+        "addressed",
+        "three",
+        "developing",
+        "avoid",
+        "ensuring",
+        "requires"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0031",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyra is organizing a series of mandatory training sessions on child protection policies for her organization, which consists of five departments: Early Childhood Education, Child Health Services, Administrative Support, Recreational Programs, and Family Counseling. Each department must have one representative attend each of the following three training modules: Policy Understanding, Crisis Management, and Reporting Protocols.\n\nConstraints:\n\n1. Each training module is offered in two formats: online and in-person. A department must choose the same format for all its modules.\n2. In-person sessions can accommodate a maximum of two departments per module due to space limitations.\n3. At least two departments must attend the in-person format for each module to promote hands-on learning.\n4. The Family Counseling department prefers online training for Policy Understanding but is flexible for other modules.\n5. The Recreational Programs department cannot attend more than one in-person module to ensure staff availability for activities.\n\nQuestion:\n\nDetermine the training format (online or in-person) each department should select for all three training modules to satisfy all constraints while ensuring comprehensive coverage of child protection policies across the organization.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the appropriate training format for each department, several constraints must be meticulously addressed:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Consistent Format Selection: Each department must select a single format (either online or in-person) that applies uniformly across all three training modules."
+      },
+      {
+        "step_number": 3,
+        "description": "In-Person Capacity and Requirements:\n   - Capacity Limitation: Each in-person session can accommodate a maximum of two departments per module."
+      },
+      {
+        "step_number": 4,
+        "description": "- Minimum Participation: At least two departments must attend in-person for each module to ensure effective hands-on learning."
+      },
+      {
+        "step_number": 5,
+        "description": "Department-Specific Preferences and Restrictions:\n   - Family Counseling: Prefers online training for the Policy Understanding module but is flexible for others."
+      },
+      {
+        "step_number": 6,
+        "description": "- Recreational Programs: Restricted to attending no more than one in-person module to maintain staff availability for activities."
+      }
+    ],
+    "golden_final_answer": "This configuration ensures that all organizational constraints are met, departmental preferences are respected, and comprehensive coverage of child protection policies is achieved across the organization.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "applies",
+        "recreational",
+        "module",
+        "addressed",
+        "single",
+        "three",
+        "maintain",
+        "select",
+        "effective",
+        "participation"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0032",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zyra has been commissioned to retrofit a 1920s Craftsman-style bungalow with modern smart home technologies. The goal is to integrate smart lighting, climate control, and security systems while preserving the home's historical architectural features and adhering to sustainable practices.\n\nProblem:\nZyra needs to design an electrical plan that incorporates smart technologies into the bungalow without compromising its vintage charm or exceeding the sustainability and budgetary constraints.\n\nRelevant Facts, Constraints, and Rules:\n1. Architectural Preservation:\n   - Original wood moldings and trim must remain untouched.\n   - Ceiling fixtures are period-appropriate and cannot be modified or replaced.\n   - Exposed wiring is not permitted as it detracts from the home's aesthetic.\n\n2. Smart Technology Integration:\n   - Smart lighting systems should allow for dimming and color temperature adjustments.\n   - Climate control must include programmable thermostats and energy-efficient HVAC integration.\n   - Security systems should feature discreet cameras and smart locks compatible with the existing door frames.\n\n3. Sustainability Requirements:\n   - Total energy consumption must be reduced by at least 25% compared to the current usage.\n   - All materials and devices used must be eco-friendly and have a minimal environmental footprint.\n   - Installation practices should prioritize waste reduction and recycling of existing materials where possible.\n\n4. Budgetary Constraints:\n   - The total budget for the project is capped at $15,000.\n   - High-cost wiring solutions are to be avoided; cost-effective alternatives must be sought.\n   - Labor costs should not exceed 40% of the total budget.\n\n5. Technical Limitations:\n   - The existing electrical panel can support additional smart devices without major upgrades.\n   - Wireless solutions are preferred to minimize the need for invasive installations.\n   - Any necessary wiring must be concealed within existing structures to maintain the home's historical integrity.\n\nTask:\nDevelop a comprehensive electrical retrofit plan that outlines the selection and placement of smart lighting, climate control, and security systems. Your plan should detail how each system will be integrated within the given constraints, ensure a minimum of 25% energy reduction, maintain the bungalow's historical aesthetics, and stay within the $15,000 budget. Provide justifications for the chosen methods and materials, demonstrating how they align with sustainability and preservation goals.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "When retrofitting a 1920s Craftsman-style bungalow with modern smart home technologies, several key factors must be addressed to balance technological advancement with historical preservation and sustainability."
+      },
+      {
+        "step_number": 2,
+        "description": "The primary considerations include:\n\n1."
+      },
+      {
+        "step_number": 3,
+        "description": "Architectural Preservation: Maintaining the bungalow's vintage charm necessitates preserving original wood moldings, trim, and period-appropriate ceiling fixtures."
+      },
+      {
+        "step_number": 4,
+        "description": "Any integration of new technologies must avoid altering or detracting from these historical elements."
+      },
+      {
+        "step_number": 5,
+        "description": "Smart Technology Integration: Selecting smart lighting, climate control, and security systems that offer advanced features such as dimming, color temperature adjustments, programmable thermostats, energy-efficient HVAC integration, discreet security cameras, and smart locks."
+      },
+      {
+        "step_number": 6,
+        "description": "These systems must be compatible with existing structural elements, such as door frames."
+      }
+    ],
+    "golden_final_answer": "This comprehensive electrical retrofit plan strategically integrates smart lighting, climate control, and security systems into the 1920s Craftsman-style bungalow. By utilizing wireless solutions, eco-friendly materials, and concealed wiring, the plan preserves the home's historical charm while enhancing its functionality and sustainability. Adhering to the $15,000 budget and focusing on energy-efficient technologies ensures that the project meets all specified constraints and requirements, achieving a harmonious blend of vintage aesthetics and modern convenience.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "structural",
+        "frames",
+        "historical",
+        "craftsman",
+        "features",
+        "addressed",
+        "systems",
+        "architectural",
+        "offer"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0033",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Alaric has uncovered information about a fragmented ancient manuscript divided into four distinct parts, each housed in a different remote library across various regions. To successfully reunite the manuscript within a two-month timeframe, he must navigate each library's unique access requirements and scheduling constraints.\n\nRelevant Facts and Constraints:\n1. Library Alpha is located in a region where it is closed to visitors on Mondays and Wednesdays.\n2. Library Beta requires an invitation letter for access, which must be requested exactly two weeks prior to the intended visit date.\n3. Library Gamma maintains its catalog exclusively in Latin. Alaric can only effectively search the catalog using a translated glossary available at the local archive office, which operates only on Tuesdays and Thursdays.\n4. Library Delta permits a maximum of two visitors per day. Alaric must arrange his visit on a day when no other tourists are scheduled to ensure access.\n\nProblem Statement:\nGiven the above constraints, determine a viable schedule for Alaric to visit all four libraries and retrieve each part of the ancient manuscript within the next two months. Your solution should outline the specific days Alaric should plan his visits to each library, ensuring all constraints are satisfied and the timeframe is met.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To devise an effective schedule for Alaric to retrieve all four parts of the ancient manuscript within a two-month timeframe, the following factors must be meticulously evaluated:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Library Accessibility Constraints:\n   - Library Alpha: Closed on Mondays and Wednesdays; available Tuesday, Thursday, Friday, Saturday, and Sunday."
+      },
+      {
+        "step_number": 3,
+        "description": "- Library Beta: Requires an invitation letter requested exactly two weeks before the visit date."
+      },
+      {
+        "step_number": 4,
+        "description": "- Library Gamma: Catalog search dependent on a translated glossary obtainable only on Tuesdays and Thursdays from the local archive office."
+      },
+      {
+        "step_number": 5,
+        "description": "- Library Delta: Limited to two visitors per day; optimal scheduling necessitates securing a day with no other tourist bookings."
+      },
+      {
+        "step_number": 6,
+        "description": "Timeframe Management:\n   - A strict two-month period (approximately 60 days) necessitates efficient allocation of visit dates to accommodate preparation and travel time between libraries."
+      }
+    ],
+    "golden_final_answer": "This schedule meticulously adheres to each library's specific access requirements and scheduling constraints. By initiating with Library Gamma, Alaric ensures the necessary tools are in place for efficient catalog searches. Sequentially addressing Library Alpha and Beta allows for structured invitation processes and minimizes overlap. Finally, securing a dedicated day for Library Delta guarantees exclusive access, essential for retrieving the manuscript's final segment within the stipulated two-month timeframe.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "travel",
+        "retrieve",
+        "manuscript",
+        "schedule",
+        "libraries",
+        "timeframe",
+        "visitors",
+        "approximately",
+        "requires"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0034",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zyra is preparing an upcoming podcast episode that examines how different leadership styles influence team productivity and employee satisfaction within technology startups. She has gathered data from three distinct startups, each led by a different leadership style: Autocratic, Democratic, and Transformational.\n\nProblem Statement:\n\nEach startup has a team of 10 employees. Over a six-month period, Zyra collected the following data:\n\n- Startup Alpha (Autocratic Leadership):\n  - Average monthly productivity: 85 units\n  - Annual employee turnover rate: 20%\n  \n- Startup Beta (Democratic Leadership):\n  - Average monthly productivity: 75 units\n  - Annual employee turnover rate: 15%\n  \n- Startup Gamma (Transformational Leadership):\n  - Average monthly productivity: 80 units\n  - Annual employee turnover rate: 10%\n\nAdditionally, Zyra notes that the industry standard for average monthly productivity across all startups is 78 units, and the average annual employee turnover rate is 15%.\n\nTask:\n\nBased on the data provided:\n\n1. Determine which startup exceeds the industry standard in both productivity and employee retention.\n2. Analyze the potential correlation between the leadership style and the observed outcomes in productivity and turnover rates.\n3. Predict how changing the leadership style of Startup Beta to Transformational might impact its productivity and employee turnover, assuming industry trends remain constant.\n\nProvide a logical reasoning process to support your answers to each task.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To address Zyra's inquiries effectively, it's essential to methodically analyze the provided data in relation to industry standards and leadership theories."
+      },
+      {
+        "step_number": 2,
+        "description": "The approach involves:\n\n1."
+      },
+      {
+        "step_number": 3,
+        "description": "Benchmarking Performance Metrics: Comparing each startup's productivity and employee turnover rates against industry averages to identify which organizations excel beyond standard expectations."
+      },
+      {
+        "step_number": 4,
+        "description": "Leadership Style Analysis: Understanding how different leadership styles-Autocratic, Democratic, and Transformational-may influence organizational outcomes such as productivity and employee retention."
+      },
+      {
+        "step_number": 5,
+        "description": "This requires evaluating existing literature and empirical evidence linking leadership behaviors to team performance and satisfaction."
+      },
+      {
+        "step_number": 6,
+        "description": "Predictive Assessment: Considering the potential impact of transitioning from one leadership style to another, specifically assessing how adopting a Transformational leadership approach might alter Startup Beta's productivity and turnover rates, given the assumption that industry conditions remain stable."
+      }
+    ],
+    "golden_final_answer": "Conclusion: Transitioning to Transformational leadership is likely to positively impact Startup Beta by elevating its productivity above the industry average and decreasing its employee turnover rate below current levels, provided that the organization effectively implements the transformational leadership principles.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "transitioning",
+        "relation",
+        "autocratic",
+        "impact",
+        "leadership",
+        "assessment",
+        "different",
+        "remain",
+        "startup",
+        "benchmarking"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0035",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Alaric is organizing a comprehensive guided tour that highlights the historical evolution of cinematic techniques by visiting five iconic film locations in a single day. Each location is linked to a landmark film that represents a distinct advancement in filmmaking. To craft a seamless and educational experience, Alaric must schedule the visits while adhering to specific constraints related to location availability, travel times, and the chronological order of the films' releases.\n\nFacts, Constraints, and Rules:\n\n1. Film Locations and Corresponding Films:\n   - Location Alpha: Linked to \"Film 1\" released in 1950.\n   - Location Bravo: Linked to \"Film 2\" released in 1965.\n   - Location Charlie: Linked to \"Film 3\" released in 1980.\n   - Location Delta: Linked to \"Film 4\" released in 1995.\n   - Location Echo: Linked to \"Film 5\" released in 2010.\n\n2. Operating Hours for Each Location:\n   - Location Alpha: Opens from 9:00 AM to 11:00 AM.\n   - Location Bravo: Opens from 10:30 AM to 2:30 PM.\n   - Location Charlie: Opens from 1:00 PM to 4:00 PM.\n   - Location Delta: Opens from 3:30 PM to 6:30 PM.\n   - Location Echo: Opens from 5:00 PM to 8:00 PM.\n\n3. Travel Times Between Locations:\n   - Alpha to Bravo: 30 minutes.\n   - Bravo to Charlie: 45 minutes.\n   - Charlie to Delta: 30 minutes.\n   - Delta to Echo: 20 minutes.\n   - Echo to Alpha: 60 minutes.\n\n4. Visit Duration at Each Location: Alaric plans to spend exactly 45 minutes at each film location to conduct the guided tour and discuss cinematic techniques.\n\n5. Chronological Order Constraint: The tour must follow the chronological order of the films' releases, starting with the earliest released film and ending with the most recent.\n\n6. Starting Point: The tour must commence at Location Alpha.\n\nProblem Statement:\n\nDevelop a detailed schedule for Alaric's guided tour that allows him to visit all five film locations in the correct chronological order within a single day. The schedule must account for each location's operating hours, the required visit duration, and the travel times between locations. Ensure that there are no overlaps or violations of the operating hours, and that the tour starts at Location Alpha and proceeds sequentially through the remaining locations.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To develop an effective schedule for Alaric's guided tour, several critical factors must be meticulously evaluated:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Chronological Sequencing: The tour must adhere to the chronological order of the films' releases, necessitating a sequential visit from Location Alpha (1950) through to Location Echo (2010)."
+      },
+      {
+        "step_number": 3,
+        "description": "Operating Hours Compliance: Each location has specified operating hours that must accommodate both the visit duration and the arrival time, ensuring no overlap or closure issues."
+      },
+      {
+        "step_number": 4,
+        "description": "Travel Time Allocation: Accurate accounting of travel times between consecutive locations is essential to maintain the schedule's integrity and prevent delays."
+      },
+      {
+        "step_number": 5,
+        "description": "Fixed Visit Duration: A consistent 45-minute duration at each location requires precise timing to align with opening hours and travel schedules."
+      },
+      {
+        "step_number": 6,
+        "description": "Starting Point Constraint: The tour must commence at Location Alpha, setting the initial timing and sequence for subsequent visits."
+      }
+    ],
+    "golden_final_answer": "This structured approach guarantees a seamless and educational experience, optimizing time management and adhering strictly to all specified constraints.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "travel",
+        "schedule",
+        "consecutive",
+        "timing",
+        "develop",
+        "maintain",
+        "ensuring",
+        "opening",
+        "minute"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0036",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is developing a new virtual rainforest biome for an open-world game. The biome must support three primary species: the Lumina Tree, the Swiftwing Bird, and the Aqua Frog. Successful player interactions depend on the realistic behavior of these species in response to dynamic weather patterns. Zephyr aims to design a weather system that includesRain, Sunny, and Stormy conditions, each affecting the species differently:\n\n- Rainy Weather: Increases Aqua Frog population by 20%, decreases Swiftwing Bird activity by 10%, and enhances Lumina Tree growth by 15%.\n- Sunny Weather: Boosts Swiftwing Bird activity by 25%, reduces Aqua Frog visibility by 30%, and slows Lumina Tree growth by 10%.\n- Stormy Weather: Decreases Lumina Tree health by 20%, temporarily halts Swiftwing Bird activity, and forces Aqua Frogs to seek shelter, reducing their active population by 40%.\n\nThe weather system must cycle through these three conditions in a fixed sequence: Rainy -> Sunny -> Stormy -> Rainy, and so on. Each weather condition lasts for a specific duration:\n\n- Rainy: 5 in-game days\n- Sunny: 3 in-game days\n- Stormy: 2 in-game days\n\nAdditionally, the overall ecosystem must maintain a balance where:\n\n1. The Lumina Tree population must never fall below 50% of its initial count to ensure sufficient oxygen and habitat.\n2. The Swiftwing Bird population should remain above 30% to sustain pollination and seed dispersal.\n3. The Aqua Frog population must stay between 40% and 80% to maintain the aquatic food chain.\n\nProblem Statement:\n\nAfter initializing the rainforest biome, Zephyr observes the following changes over a 10 in-game day period:\n\n- Initial populations: Lumina Trees = 100 units, Swiftwing Birds = 80 units, Aqua Frogs = 60 units.\n- The weather sequence starts with Rainy weather on day 1.\n\nDetermine whether the ecosystem remains balanced according to the specified constraints at the end of the 10-day period. If it does not, identify which species violates the constraints and on which day the imbalance occurs.\n\nRelevant Facts and Constraints:\n\n1. Weather sequence and durations:\n   - Rainy: Days 1-5\n   - Sunny: Days 6-8\n   - Stormy: Days 9-10\n2. Population changes per weather condition:\n   - Rainy:\n     - Lumina Trees: +15%\n     - Swiftwing Birds: -10%\n     - Aqua Frogs: +20%\n   - Sunny:\n     - Lumina Trees: -10%\n     - Swiftwing Birds: +25%\n     - Aqua Frogs: -30%\n   - Stormy:\n     - Lumina Trees: -20%\n     - Swiftwing Birds: -100% (activity halted)\n     - Aqua Frogs: -40%\n3. Ecosystem balance constraints:\n   - Lumina Trees >= 50 units\n   - Swiftwing Birds >= 30 units\n   - Aqua Frogs between 40 and 80 units\n\nTask:\n\nCalculate the populations of Lumina Trees, Swiftwing Birds, and Aqua Frogs at the end of each weather period. Assess whether all populations remain within the specified constraints after 10 in-game days. If any species falls outside its acceptable range, specify which species and the day the constraint is breached.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To assess the stability of the rainforest biome ecosystem over a 10 in-game day period, the following approach will be employed:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Understanding Weather Patterns and Durations: The ecosystem experiences three distinct weather conditions-Rainy, Sunny, and Stormy-in a fixed sequence with specific durations:\n   - Rainy: Days 1-5\n   - Sunny: Days 6-8\n   - Stormy: Days 9-10\n\n2."
+      },
+      {
+        "step_number": 3,
+        "description": "Population Dynamics: Each weather condition impacts the populations of the Lumina Trees, Swiftwing Birds, and Aqua Frogs through percentage-based changes."
+      },
+      {
+        "step_number": 4,
+        "description": "It is essential to determine whether these changes are applied daily or once per weather period."
+      },
+      {
+        "step_number": 5,
+        "description": "Given the durations, it is logical to apply the specified percentage changes daily to reflect dynamic interactions."
+      },
+      {
+        "step_number": 6,
+        "description": "Sequential Calculations: Calculate the population changes day-by-day, applying the corresponding percentages based on the active weather condition."
+      }
+    ],
+    "golden_final_answer": "The ecosystem does not remain balanced over the 10-day period. Specifically, the Aqua Frog population exceeds the maximum limit of 80 units on Day 2 during the Rainy weather phase, breaching the ecosystem's constraints.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "calculate",
+        "ecosystem",
+        "three",
+        "daily",
+        "patterns",
+        "corresponding",
+        "condition",
+        "applying",
+        "weather",
+        "reflect"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0037",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is mentoring a team of architects tasked with designing a new community center that prioritizes accessibility without compromising aesthetic appeal. The project must accommodate various accessibility features, adhere to a strict budget, and meet specific spatial requirements to serve diverse community needs.\n\nProblem Statement:\nDetermine the optimal allocation of resources to incorporate accessibility features into the community center design while staying within budget and meeting spatial constraints.\n\nRelevant Facts, Constraints, and Rules:\n1. Budget Constraints:\n   - Total available budget for accessibility features: \\$150,000.\n   - Elevators cost \\$40,000 each.\n   - Ramps cost \\$15,000 each.\n   - Accessible restrooms cost \\$25,000 to retrofit.\n   - Braille signage installations cost \\$5,000 in total.\n\n2. Spatial Requirements:\n   - The community center has three floors.\n   - Each floor must have at least one accessible restroom.\n   - Elevators must service all three floors.\n   - Ramps are required at two main entrances.\n\n3. Accessibility Standards:\n   - Compliance with the latest ADA (Americans with Disabilities Act) guidelines is mandatory.\n   - No more than 10% of the total budget can be allocated to any single accessibility feature to ensure a balanced approach.\n\n4. Design Considerations:\n   - The team aims to minimize the number of elevators to reduce costs.\n   - Ramps should be strategically placed to maximize usability without occupying excessive space.\n   - Braille signage is essential for navigation but should not exceed the budget allocation.\n\nQuestion:\nHow should Zephyr's team allocate their budget to the various accessibility features to ensure that all spatial requirements and ADA guidelines are met without exceeding the \\$150,000 budget?\n\nTask:\nProvide a detailed allocation plan for purchasing and installing elevators, ramps, accessible restrooms, and Braille signage. Ensure that the plan adheres to all given constraints and optimizes the use of the budget while fulfilling the community center's accessibility needs.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "In addressing the optimal allocation of resources for incorporating accessibility features into the community center design, several critical factors must be meticulously analyzed:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Budget Constraints: The total budget allocated for accessibility features is \\$150,000."
+      },
+      {
+        "step_number": 3,
+        "description": "Each accessibility feature has a fixed cost:\n   - Elevators: \\$40,000 each\n   - Ramps: \\$15,000 each\n   - Accessible Restrooms: \\$25,000 each\n   - Braille Signage: \\$5,000 total\n\n2."
+      },
+      {
+        "step_number": 4,
+        "description": "Spatial Requirements:\n   - Elevators: Must service all three floors."
+      },
+      {
+        "step_number": 5,
+        "description": "The team aims to minimize the number to reduce costs."
+      },
+      {
+        "step_number": 6,
+        "description": "- Accessible Restrooms: Each of the three floors requires at least one accessible restroom."
+      }
+    ],
+    "golden_final_answer": "By meticulously allocating the budget in this manner, Zephyr's team ensures that all essential accessibility features are incorporated, ADA guidelines are met, and the community center remains both functional and aesthetically pleasing within the prescribed financial framework.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "total",
+        "allocated",
+        "features",
+        "design",
+        "three",
+        "spatial",
+        "elevators",
+        "requires",
+        "minimize"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0038",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is preparing for an upcoming match and needs to select the optimal combination of players based on their recent performance metrics and the opposing team's defensive strategies. He has four players to choose from: Liam, Noah, Ethan, and Mason. Each player has a distinct set of strengths in three key areas: passing accuracy, defensive interceptions, and goal-scoring ability. Additionally, each player specializes in a different position: midfield, defense, forward, or winger.\n\nRelevant Facts and Constraints:\n1. The player with the highest passing accuracy specializes in midfield.\n2. Ethan does not play as a forward and has the lowest goal-scoring ability.\n3. Mason has a higher number of defensive interceptions than Noah but a lower passing accuracy than Liam.\n4. The winger has better goal-scoring ability than the player in defense but lower defensive interceptions than Ethan.\n5. Noah has the highest goal-scoring ability among the four players.\n\nProblem Statement:\nDetermine the position, passing accuracy ranking (from highest to lowest), defensive interceptions ranking (from highest to lowest), and goal-scoring ability ranking (from highest to lowest) for each player: Liam, Noah, Ethan, and Mason.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the optimal combination of players for Zephyr's upcoming match, we must analyze the distinct attributes and constraints provided for each player."
+      },
+      {
+        "step_number": 2,
+        "description": "The key areas of focus are passing accuracy, defensive interceptions, goal-scoring ability, and player positions."
+      },
+      {
+        "step_number": 3,
+        "description": "By systematically evaluating each constraint, we can establish a logical ranking and positioning for Liam, Noah, Ethan, and Mason to ensure the most effective team composition against the opposing team's defensive strategies."
+      },
+      {
+        "step_number": 4,
+        "description": "Final Solution:\nWe begin by analyzing the given constraints to establish a ranking and position for each player:\n\n1."
+      },
+      {
+        "step_number": 5,
+        "description": "Highest Passing Accuracy and Positioning:\n   - *Constraint 1* states that the player with the highest passing accuracy specializes in midfield."
+      },
+      {
+        "step_number": 6,
+        "description": "This identifies the midfielder as the player with the top passing accuracy ranking."
+      }
+    ],
+    "golden_final_answer": "This configuration ensures that each player's strengths align with their designated positions, optimizing team performance against the opposing defense by leveraging high passing accuracy in midfield, strategic defensive placements, and effective goal-scoring roles.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "ability",
+        "areas",
+        "position",
+        "focus",
+        "positioning",
+        "ethan",
+        "begin",
+        "establish",
+        "analyzing",
+        "upcoming"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0039",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is preparing to expand the neighborhood watch program in a mid-sized urban community by partnering with local businesses. The goal is to enhance surveillance coverage, increase community engagement, and distribute responsibilities effectively among residents and business partners.\n\nProblem Statement:\nZephyr must determine the optimal allocation of limited security resources to various local businesses to maximize neighborhood watch coverage while adhering to budgetary and logistical constraints.\n\nRelevant Facts, Constraints, and Rules:\n1. Budget Constraint: Zephyr has a total budget of $50,000 for the expansion, which must cover the costs of security equipment, training sessions, and maintenance for all participating businesses.\n2. Business Categories: There are three categories of businesses in the community:\n   - Retail Stores: 10 existing, each requiring an initial security setup cost of $3,000 and a monthly maintenance fee of $500.\n   - Restaurants: 8 existing, each requiring an initial security setup cost of $4,000 and a monthly maintenance fee of $600.\n   - Service Providers: 5 existing, each requiring an initial security setup cost of $5,000 and a monthly maintenance fee of $700.\n3. Coverage Requirement: To ensure comprehensive neighborhood coverage, at least:\n   - 70% of Retail Stores,\n   - 50% of Restaurants, and\n   - 40% of Service Providers\n   must be equipped with the security system.\n4. Training Sessions: Each participating business must send two representatives to a mandatory training session, incurring an additional cost of $200 per business.\n5. Resource Limitation: Due to logistical limitations, Zephyr can allocate resources to a maximum of 15 businesses in total.\n6. Long-Term Maintenance: The budget must cover both the initial setup costs and the first three months of maintenance fees for all chosen businesses.\n\nSpecific Question:\nWhich combination of Retail Stores, Restaurants, and Service Providers should Zephyr partner with to maximize neighborhood watch coverage while staying within the $50,000 budget and adhering to all specified constraints?",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "Calculate Minimum Required Expenditure"
+      },
+      {
+        "step_number": 2,
+        "description": "Assess Budget Feasibility"
+      },
+      {
+        "step_number": 3,
+        "description": "Evaluate Constraints"
+      }
+    ],
+    "golden_final_answer": "By adopting these strategies, Zephyr can work towards a feasible expansion of the neighborhood watch program that balances both coverage and budgetary constraints.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "calculate",
+        "feasibility",
+        "required",
+        "assess",
+        "budget",
+        "constraints",
+        "minimum",
+        "evaluate",
+        "expenditure"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0040",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is organizing a themed birthday celebration for their child, aiming to include three main interactive elements: a storytelling session, an art station, and an immersive character encounter. The party venue is available for 4 hours from 2 PM to 6 PM. Each activity requires specific time slots and has associated setup times:\n\n- Storytelling Session: Requires 1 hour for the session, with an additional 30 minutes for setup. Must include a professional storyteller.\n- Art Station: Requires 2 hours for children to create their art projects, with 45 minutes for setup. Materials must be prepared beforehand.\n- Immersive Character Encounter: Requires 1.5 hours for character interactions, with 30 minutes for setup. Requires two costumed performers.\n\nConstraints:\n\n1. Only one main activity can run at a time due to space limitations.\n2. Setup times must be accounted for and cannot overlap with other activities' setup or running times.\n3. All activities must start and end within the venue's operating hours (2 PM to 6 PM).\n4. After any activity ends, there must be at least a 15-minute break before the next activity can start to allow for transitions.\n\nProblem:\n\nDetermine a schedule that allows Zephyr to include all three interactive elements in the celebration. Specify the start and end times for each activity's setup and running period, ensuring all constraints are met.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To develop an effective schedule for Zephyr's themed birthday celebration, several key factors and constraints must be meticulously analyzed:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Total Available Time: The venue is accessible for a total of 4 hours, from 2 PM to 6 PM."
+      },
+      {
+        "step_number": 3,
+        "description": "Activity Durations and Setup Times:\n   - Storytelling Session: 1 hour (session) + 30 minutes (setup) = 1.5 hours total."
+      },
+      {
+        "step_number": 4,
+        "description": "- Art Station: 2 hours (activity) + 45 minutes (setup) = 2.75 hours total."
+      },
+      {
+        "step_number": 5,
+        "description": "- Immersive Character Encounter: 1.5 hours (interaction) + 30 minutes (setup) = 2 hours total."
+      },
+      {
+        "step_number": 6,
+        "description": "Sequential Execution: Due to space limitations, only one main activity can occur at any given time."
+      }
+    ],
+    "golden_final_answer": "This adjusted schedule ensures all planned activities operate within the venue's operational hours while respecting the outlined constraints.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "interaction",
+        "activity",
+        "total",
+        "schedule",
+        "station",
+        "develop",
+        "immersive",
+        "effective",
+        "several"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0041",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is analyzing the factors contributing to the cultural impact of extreme sports over the past year. He focuses on four variables: technological advancements (T), community engagement (C), individual expression (I), and media coverage (M). Last year, the cultural impact (CI_last) was quantified at 500 units using his model:\n\n\\[ CI = (T \\times C) + (I \\times M) \\]\n\nThis year, Zephyr records the following changes:\n1. Technological advancements (T) increased by 20%.\n2. Community engagement (C) decreased by 15%.\n3. Individual expression (I) increased by 10%.\n4. Media coverage (M) remained constant (0% change).\n\nRelevant Facts, Constraints, and Rules:\n- Last year's cultural impact: CI_last = 500 units.\n- Percentage changes are relative to last year's values.\n- All variables are positive and directly proportional to their measures.\n- The model equation: CI = (T * C) + (I * M).\n- All other potential influencing factors remain unchanged.\n\nQuestions:\n1. Calculate this year's cultural impact (CI_current) using Zephyr's model and the provided data.\n2. Determine whether Zephyr's hypothesis about the relationship between these variables and cultural impact is supported based on the calculated CI_current.\n\nSolution:\n\n1. Calculating CI_current:\n   Let's denote last year's values as:\n   - T_last\n   - C_last\n   - I_last\n   - M_last\n\n   Thus, last year:\n   \\[ 500 = (T_{last} \\times C_{last}) + (I_{last} \\times M_{last}) \\]\n\n   This year, the variables are:\n   - T_current = T_last * 1.20\n   - C_current = C_last * 0.85\n   - I_current = I_last * 1.10\n   - M_current = M_last\n\n   Plugging these into the CI equation:\n   \\[ CI_{current} = (T_{current} \\times C_{current}) + (I_{current} \\times M_{current}) \\]\n   \\[ CI_{current} = (1.20 \\times T_{last} \\times 0.85 \\times C_{last}) + (1.10 \\times I_{last} \\times M_{last}) \\]\n   \\[ CI_{current} = (1.02 \\times T_{last} \\times C_{last}) + (1.10 \\times I_{last} \\times M_{last}) \\]\n\n   From last year's equation:\n   \\[ 500 = T_{last} \\times C_{last} + I_{last} \\times M_{last} \\]\n\n   Substitute \\( T_{last} \\times C_{last} = 500 - I_{last} \\times M_{last} \\) into CI_current:\n   \\[ CI_{current} = 1.02 \\times (500 - I_{last} \\times M_{last}) + 1.10 \\times I_{last} \\times M_{last} \\]\n   \\[ CI_{current} = 1.02 \\times 500 - 1.02 \\times I_{last} \\times M_{last} + 1.10 \\times I_{last} \\times M_{last} \\]\n   \\[ CI_{current} = 510 - 1.02 \\times I_{last} \\times M_{last} + 1.10 \\times I_{last} \\times M_{last} \\]\n   \\[ CI_{current} = 510 + (1.10 - 1.02) \\times I_{last} \\times M_{last} \\]\n   \\[ CI_{current} = 510 + 0.08 \\times I_{last} \\times M_{last} \\]\n\n   Since \\( I_{last} \\times M_{last} = 500 - T_{last} \\times C_{last} \\), it's evident that CI_current is greater than 510, indicating an increase in cultural impact.\n\n2. Analyzing Zephyr's Hypothesis:\n   The increase in CI_current suggests that despite a decrease in community engagement (C), the combined effects of increased technological advancements (T) and individual expression (I), along with constant media coverage (M), have led to a higher cultural impact. This outcome supports Zephyr's hypothesis that the interplay between technology, individual expression, and media coverage can compensate for reduced community engagement, thereby enhancing the overall cultural significance of extreme sports.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To analyze the cultural impact (CI) of extreme sports over the past year, we must consider the four key variables identified by Zephyr: technological advancements (T), community engagement (C), individual expression (I), and media coverage (M)."
+      },
+      {
+        "step_number": 2,
+        "description": "The given model quantifies cultural impact as:\n\n\\[\nCI = (T \\times C) + (I \\times M)\n\\]\n\nLast year's cultural impact (CI_last) was 500 units."
+      },
+      {
+        "step_number": 3,
+        "description": "This year, the variables have changed as follows:\n\n1."
+      },
+      {
+        "step_number": 4,
+        "description": "Technological advancements (T) increased by 20%."
+      },
+      {
+        "step_number": 5,
+        "description": "Community engagement (C) decreased by 15%."
+      },
+      {
+        "step_number": 6,
+        "description": "Individual expression (I) increased by 10%."
+      }
+    ],
+    "golden_final_answer": "The calculated \\( CI_{\\text{current}} > 510 \\) demonstrates that despite a 15% decrease in community engagement, the 20% increase in technological advancements and the 10% increase in individual expression have sufficiently compensated, resulting in a higher cultural impact. This outcome aligns with Zephyr's hypothesis, confirming that the combined effects of the variables positively contribute to cultural significance, even when one factor experiences a decline.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "impact",
+        "sports",
+        "coverage",
+        "individual",
+        "changed",
+        "expression",
+        "quantifies",
+        "community",
+        "variables",
+        "units"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0042",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Arpeggio is organizing a workshop for five aspiring musicians, each proposing a different contemporary pop song for a remix project. To ensure a diverse and harmonious selection, Arpeggio must choose three songs that align with distinct lyrical themes and complementary musical elements. However, several constraints limit the possible combinations.\n\nRelevant Facts, Constraints, and Rules:\n\n1. Proposed Pop Songs:\n   - \"Echoes\" - Themes of reflection; melancholic melody.\n   - \"Sunrise\" - Celebrates new beginnings; upbeat tempo.\n   - \"Midnight\" - Explores solitude; slow, ambient sound.\n   - \"Pulse\" - Focuses on rhythm and energy; fast-paced beat.\n   - \"Whispers\" - Delves into secrets; soft, intricate melody.\n\n2. Workshop Capacity:\n   - Only three remix projects can be accommodated.\n\n3. Selection Criteria:\n   - Lyrical Diversity: No two selected songs may share similar lyrical themes.\n   - Musical Complementarity: Each song's melody must align with a distinct musical element-harmony, rhythm, or instrumentation.\n\n4. Additional Constraints:\n   - If \"Echoes\" is selected, then \"Whispers\" cannot be selected.\n   - \"Pulse\" requires that \"Sunrise\" is also selected.\n   - \"Midnight\" cannot be paired with any song that has an upbeat tempo.\n\nQuestion:\n\nWhich three pop songs should Arpeggio select for the workshop's remix projects to satisfy all the above constraints?",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "Analyze Additional Constraints"
+      },
+      {
+        "step_number": 2,
+        "description": "Assess Musical Elements"
+      },
+      {
+        "step_number": 3,
+        "description": "Evaluate Possible Combinations"
+      },
+      {
+        "step_number": 4,
+        "description": "Identify Valid Combination"
+      }
+    ],
+    "golden_final_answer": "Given the stringent constraints, there is no feasible trio of songs that satisfies all conditions simultaneously. Arpeggio may need to revisit the selection criteria or increase the workshop capacity to include additional projects that allow for a more flexible selection within the existing constraints.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "additional",
+        "valid",
+        "assess",
+        "identify",
+        "constraints",
+        "analyze",
+        "musical",
+        "elements",
+        "possible",
+        "evaluate"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0043",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Althea is preparing a personalized coaching program for five clients who have recently navigated divorce and are seeking to establish fulfilling new relationships. Each client has distinct priorities and constraints that must be addressed to ensure the effectiveness of the program.\n\nProblem Statement:\nAlthea needs to design a weekly coaching schedule that accommodates each client's top two focus areas without overlapping sessions, ensuring that all clients receive comprehensive support within the constraints of her available time.\n\nRelevant Facts, Constraints, and Rules:\n1. Clients and Their Priorities:\n   - Client A: Emotional Resilience and Self-Love\n   - Client B: Effective Communication and Emotional Resilience\n   - Client C: Effective Communication and Self-Love\n   - Client D: Emotional Resilience and Effective Communication\n   - Client E: Self-Love and Rekindling Romance\n\n2. Coaching Focus Areas:\n   - Emotional Resilience (ER)\n   - Effective Communication (EC)\n   - Self-Love (SL)\n   - Rekindling Romance (RR)\n\n3. Scheduling Constraints:\n   - Althea has 5 days available for coaching sessions.\n   - Each day has 2 available time slots, totaling 10 time slots for the week.\n   - Each coaching session focuses on one specific area (ER, EC, SL, RR).\n   - A client cannot have more than one session per day.\n   - Each focus area session can accommodate only one client at a time.\n\n4. Session Requirements:\n   - Each client requires one session for each of their two priority areas.\n   - All required sessions must be scheduled within the same week.\n\nSpecific Question:\nHow should Althea allocate the coaching sessions across the 5-day week to ensure that each client's top two priorities are addressed without any scheduling conflicts, adhering to the constraints listed above?\n\nTask:\nDevelop a detailed schedule outlining which client receives which coaching focus in each time slot over the 5-day week, ensuring that:\n- No two clients are scheduled for the same focus area in the same time slot.\n- No client has more than one session per day.\n- All clients receive both of their required coaching sessions within the week.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To design an effective weekly coaching schedule for Althea's five clients, several key factors must be addressed:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Client Priorities and Session Requirements:\n   - Each client requires two sessions per week, each focusing on one of their top two priority areas."
+      },
+      {
+        "step_number": 3,
+        "description": "- The total number of required sessions is 10 (5 clients * 2 sessions each)."
+      },
+      {
+        "step_number": 4,
+        "description": "Scheduling Constraints:\n   - Althea has 10 available time slots (5 days * 2 slots per day)."
+      },
+      {
+        "step_number": 5,
+        "description": "- No client can have more than one session per day to prevent overloading and ensure adequate reflection time between sessions."
+      },
+      {
+        "step_number": 6,
+        "description": "- Each focus area session (ER, EC, SL, RR) can only accommodate one client per time slot, preventing overlapping expertise demands."
+      }
+    ],
+    "golden_final_answer": "By meticulously aligning each session with the clients' priorities and adhering to the scheduling constraints, Althea can deliver a structured and effective coaching program that fosters the clients' growth and well-being.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "areas",
+        "focus",
+        "priorities",
+        "total",
+        "design",
+        "schedule",
+        "addressed",
+        "client",
+        "requires"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0044",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is in the process of launching a new solar-powered irrigation system tailored for large-scale agricultural operations. To ensure the venture's success, Zephyr must establish partnerships with suppliers, distributors, and research institutions. The objective is to optimize the supply chain for cost-efficiency, sustainability, and innovation within specific constraints.\n\nProblem Statement:\nZephyr needs to select one supplier for photovoltaic panels, one distributor for the irrigation systems, and one research institution for ongoing product development. The choices must satisfy the following conditions to maximize both sustainability and profitability.\n\nRelevant Facts, Constraints, and Rules:\n1. Suppliers for Photovoltaic Panels:\n   - Supplier A offers panels at \\$200 per unit with a carbon footprint score of 80.\n   - Supplier B offers panels at \\$180 per unit with a carbon footprint score of 75.\n   - Supplier C offers panels at \\$220 per unit with a carbon footprint score of 90.\n2. Distributors for Irrigation Systems:\n   - Distributor X has a distribution cost of \\$50 per unit and a sustainability rating of 85.\n   - Distributor Y has a distribution cost of \\$45 per unit and a sustainability rating of 80.\n   - Distributor Z has a distribution cost of \\$55 per unit and a sustainability rating of 90.\n3. Research Institutions for Product Development:\n   - Institution M charges \\$10,000 annually and improves product efficiency by 15%.\n   - Institution N charges \\$12,000 annually and improves product efficiency by 20%.\n   - Institution O charges \\$9,000 annually and improves product efficiency by 10%.\n4. Budget Constraints:\n   - The maximum budget for suppliers and distributors combined is \\$500,000.\n   - The annual budget allocated for research institutions is \\$10,000.\n5. Sustainability Requirements:\n   - The combined carbon footprint score of the supplier must be at least 80.\n   - The distributor must have a sustainability rating of at least 85.\n6. Profitability Goal:\n   - Zephyr aims to minimize the total cost while maximizing product efficiency.\n\nQuestion:\nWhich combination of supplier, distributor, and research institution should Zephyr select to meet the budget and sustainability constraints while achieving the highest possible product efficiency?",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the optimal combination of supplier, distributor, and research institution for Zephyr's solar-powered irrigation system, several factors must be meticulously evaluated:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Sustainability Constraints:\n   - Supplier Selection: Only suppliers with a carbon footprint score of at least 80 are eligible."
+      },
+      {
+        "step_number": 3,
+        "description": "This narrows the options to Supplier A and Supplier C."
+      },
+      {
+        "step_number": 4,
+        "description": "- Distributor Selection: Distributors must have a sustainability rating of at least 85, limiting the choices to Distributor X and Distributor Z."
+      },
+      {
+        "step_number": 5,
+        "description": "Budget Constraints:\n   - Suppliers and Distributors: The combined cost for suppliers and distributors must not exceed \\$500,000."
+      },
+      {
+        "step_number": 6,
+        "description": "Given that costs are per unit, and without specific unit quantities, we assume that the per-unit costs are manageable within this budget."
+      }
+    ],
+    "golden_final_answer": "This combination ensures compliance with sustainability requirements, adheres to budgetary constraints, and aligns with Zephyr's goals of cost-efficiency and enhanced product performance.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "manageable",
+        "without",
+        "powered",
+        "rating",
+        "limiting",
+        "several",
+        "determine",
+        "optimal",
+        "evaluated"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0045",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zyra is coordinating the deployment of a new integrated project management platform across her organization, which comprises four departments: Marketing, Design, Development, and Customer Support. Each department requires specific software tools and corresponding training sessions to effectively utilize the platform. Zyra must allocate resources efficiently within a constrained budget to ensure all departments are adequately supported.\n\nProblem Statement:\nDetermine whether Zyra can allocate the necessary software licenses and training sessions to all four departments without exceeding the total budget of $20,000. If it is possible, provide a valid allocation of resources. If not, identify which departments cannot be fully supported under the given budget constraints.\n\nRelevant Facts, Constraints, and Rules:\n\n1. Software Licenses and Costs:\n   - Advanced Analytics Suite: $5,000 per license\n   - Creative Design Tools: $3,000 per license\n   - Development Environment: $4,000 per license\n   - Customer Support Portal: $2,500 per license\n\n2. Training Sessions and Costs:\n   - Data Analytics Training: $1,500 per session\n   - Design Thinking Workshop: $1,200 per session\n   - Software Development Bootcamp: $1,800 per session\n   - Customer Service Excellence Seminar: $1,000 per session\n\n3. Department Requirements:\n   - Marketing Department:\n     - Must receive either the Advanced Analytics Suite or the Creative Design Tools.\n     - Requires the Data Analytics Training if Advanced Analytics Suite is selected.\n     - Requires the Design Thinking Workshop if Creative Design Tools are selected.\n   - Design Department:\n     - Must receive the Creative Design Tools.\n     - Requires the Design Thinking Workshop.\n   - Development Department:\n     - Must receive the Development Environment.\n     - Requires the Software Development Bootcamp.\n   - Customer Support Department:\n     - Must receive the Customer Support Portal.\n     - Requires the Customer Service Excellence Seminar.\n\n4. Budget Constraint:\n   - Total available budget for software licenses and training sessions is $20,000.\n\nTask:\nAnalyze the requirements and costs to determine a feasible allocation of software licenses and training sessions to the Marketing, Design, Development, and Customer Support departments. Ensure that the total expenditure does not exceed the $20,000 budget. If such an allocation is possible, outline the specific assignments of tools and training for each department. If it is not feasible, specify which departments cannot be fully supported within the budget constraints.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine whether Zyra can allocate the necessary software licenses and training sessions to all four departments within the $20,000 budget, the following considerations are essential:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Department Requirements: Each department has specific software and training needs."
+      },
+      {
+        "step_number": 3,
+        "description": "Notably, the Marketing Department has an option between two software suites, each with its associated training."
+      },
+      {
+        "step_number": 4,
+        "description": "Cost Analysis: Calculating the total cost for each department based on their requirements is crucial."
+      },
+      {
+        "step_number": 5,
+        "description": "This includes both software licenses and training sessions."
+      },
+      {
+        "step_number": 6,
+        "description": "Budget Constraints: Ensuring that the cumulative cost does not exceed the $20,000 budget while fully supporting all departments."
+      }
+    ],
+    "golden_final_answer": "This allocation ensures that all departments receive the necessary tools and training within the stipulated budget.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "suites",
+        "total",
+        "needs",
+        "ensuring",
+        "allocate",
+        "determine",
+        "based",
+        "includes",
+        "essential",
+        "constraints"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0046",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "The city council is evaluating its strategy to transition the local energy sector from coal-based operations to renewable energy sources over the next five years. Zyra, an environmental policy analyst, has been tasked with designing a plan that not only adopts sustainable practices but also ensures economic growth by retraining the existing workforce.\n\nProblem Statement:\nZyra must allocate a $50 million budget to invest in renewable energy projects and implement training programs for 500 workers transitioning from coal mining to renewable energy jobs. The goal is to maximize the number of workers successfully transitioned within the budget and time constraints.\n\nRelevant Facts and Constraints:\n1. Renewable Energy Projects:\n   - Solar Projects:\n     - Initial Investment: $15 million\n     - Employment Capacity: 200 workers\n     - Project Duration: 2 years\n   - Wind Projects:\n     - Initial Investment: $20 million\n     - Employment Capacity: 150 workers\n     - Project Duration: 3 years\n   - Biomass Projects:\n     - Initial Investment: $10 million\n     - Employment Capacity: 100 workers\n     - Project Duration: 1 year\n\n2. Training Programs:\n   - Cost per Worker: $100,000\n   - Training Duration: Must be completed before workers can be employed in renewable sectors.\n\n3. Budget and Time Constraints:\n   - Total Budget Available: $50 million\n   - Transition Period: 5 years\n   - All projects and training programs must be fully funded within the budget and completed within the transition period.\n\n4. Additional Constraints:\n   - Each renewable project can only employ workers who have completed the corresponding training program.\n   - Workers can only be assigned to one type of renewable project.\n   - Partial funding of projects is not allowed; each project must be fully funded to be operational.\n\nTask:\nDetermine the optimal combination of solar, wind, and biomass projects, along with the number of training programs allocated to each, that Zyra should implement to maximize the number of workers transitioned from coal mining to renewable energy jobs. Ensure that the total expenditure does not exceed the $50 million budget and that all projects and training programs are completed within the five-year timeframe.\n\nQuestions to Solve:\n1. How many of each type of renewable energy project should be funded?\n2. How should the 500 workers be distributed among the training programs for each renewable sector?\n3. Does the proposed allocation stay within the budget and time constraints?\n4. What is the maximum number of workers that can be successfully transitioned under the optimal allocation?",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the optimal allocation of the $50 million budget for transitioning 500 workers from coal mining to renewable energy sectors within a five-year timeframe, several factors and constraints must be meticulously analyzed:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Renewable Energy Projects:\n   - Investment and Employment Capacity: Each project type (Solar, Wind, Biomass) requires a specific initial investment and has a defined employment capacity."
+      },
+      {
+        "step_number": 3,
+        "description": "- Project Duration: The time each project takes to become operational must align with the overall transition period of five years."
+      },
+      {
+        "step_number": 4,
+        "description": "Training Programs:\n   - Cost and Capacity: Training each worker incurs a fixed cost, and the total number of workers to be trained must not exceed the available budget."
+      },
+      {
+        "step_number": 5,
+        "description": "- Timeframe: Training must be completed before workers can be allocated to their respective projects, necessitating synchronization between training schedules and project start times."
+      },
+      {
+        "step_number": 6,
+        "description": "Budget Constraints:\n   - Total Expenditure: The sum of investments in renewable projects and the costs of training programs must not exceed the $50 million budget."
+      }
+    ],
+    "golden_final_answer": "Alternatively, a partial funding approach can be considered, allowing for incremental project launches and worker training as additional funds become available over the five-year period. However, under the current constraints, transitioning 200 workers is the most feasible outcome.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "transitioning",
+        "factors",
+        "completed",
+        "investments",
+        "transition",
+        "investment",
+        "total",
+        "allocated",
+        "years",
+        "employment"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0047",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "During an excavation of the recently uncovered site of the ancient city of Thaloria, Aurelia and her team discovered four distinct artifact clusters, each believed to be associated with different aspects of Thalorian daily life. The clusters are labeled A, B, C, and D. Preliminary analysis suggests that each cluster contains items related to specific cultural practices, trade activities, religious ceremonies, or domestic life. However, the exact association of each cluster with these aspects remains unclear.\n\nProblem Statement:\nDetermine the correct association of each artifact cluster (A, B, C, D) with one of the four aspects of Thalorian society: cultural practices, trade activities, religious ceremonies, or domestic life.\n\nRelevant Facts, Constraints, and Rules:\n1. Cluster A contains pottery shards, tools for textile production, and decorative items.\n2. Cluster B includes imported goods such as spices, metals, and glassware not native to Thaloria.\n3. Cluster C holds religious symbols, ceremonial masks, and offerings used in rituals.\n4. Cluster D comprises household utensils, cooking equipment, and personal items.\n5. The cluster associated with trade activities does not contain religious or domestic items.\n6. Cultural practices are primarily represented by items used in artistic expressions and social events.\n7. Religious ceremonies exclusively involve artifacts used in worship and spiritual rituals.\n8. Domestic life artifacts are exclusively related to the everyday living needs of Thalorian citizens.\n9. No cluster contains items that overlap between different aspects; each cluster is dedicated to a single aspect.\n\nTask:\nUsing logical deduction based on the provided facts and constraints, assign each artifact cluster (A, B, C, D) to the correct aspect of Thalorian society: cultural practices, trade activities, religious ceremonies, or domestic life.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To accurately assign each artifact cluster (A, B, C, D) to the corresponding aspect of Thalorian society-cultural practices, trade activities, religious ceremonies, or domestic life-it is essential to analyze the contents of each cluster in relation to the provided constraints."
+      },
+      {
+        "step_number": 2,
+        "description": "The approach involves:\n\n1."
+      },
+      {
+        "step_number": 3,
+        "description": "Identifying Key Characteristics: Examining the specific items within each cluster to determine their primary function or significance within society."
+      },
+      {
+        "step_number": 4,
+        "description": "Applying Constraints: Ensuring that each cluster aligns exclusively with one aspect, as overlapping is prohibited."
+      },
+      {
+        "step_number": 5,
+        "description": "Logical Deduction: Sequentially eliminating possibilities based on the exclusivity and relevance of items to each societal aspect."
+      },
+      {
+        "step_number": 6,
+        "description": "The constraints provided serve as guiding principles to prevent misclassification, particularly emphasizing the non-overlapping nature of the clusters and the distinct definitions of each societal aspect."
+      }
+    ],
+    "golden_final_answer": "This systematic assignment ensures that each artifact cluster is accurately linked to a singular, appropriate aspect of Thalorian society, adhering strictly to the provided constraints and definitions.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "relation",
+        "examining",
+        "misclassification",
+        "emphasizing",
+        "practices",
+        "function",
+        "deduction",
+        "characteristics",
+        "aligns",
+        "ceremonies"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0048",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is tasked with optimizing his rugby team's lineup for the upcoming championship match. The team consists of 15 players, each possessing varying levels of speed, strength, tactical awareness, and endurance. The opposing team is known for their three distinct strategies: a swift offensive rush, a heavy defensive blockade, and a versatile counter-attack formation. Zephyr must assign his players to the appropriate positions to effectively counter these strategies while adhering to specific placement constraints.\n\nProblem Statement:\nDetermine the optimal assignment of Zephyr's 15 players to the team's 15 positions to maximize the team's defensive and offensive capabilities against the opponent's known strategies.\n\nRelevant Facts, Constraints, and Rules:\n\n1. Player Attributes:\n   - Each of the 15 players has rated attributes out of 10 in the following categories:\n     - Speed\n     - Strength\n     - Tactical Awareness\n     - Endurance\n\n2. Position Requirements:\n   - Each of the 15 positions on the field has minimum required attribute ratings:\n     - Certain key positions require a minimum tactical awareness of 8.\n     - Positions designated for offensive play prioritize speed and endurance.\n     - Defensive positions prioritize strength and tactical awareness.\n\n3. Opponent's Strategies:\n   - Swift Offensive Rush: Requires players in speed-oriented positions to have a combined speed rating of at least 70.\n   - Heavy Defensive Blockade: Requires players in strength-oriented positions to have a combined strength rating of at least 80.\n   - Versatile Counter-Attack Formation: Requires players in tactical roles to have a combined tactical awareness rating of at least 75.\n\n4. Placement Constraints:\n   - No two players with overlapping high defensive skills (strength >= 8) can be placed adjacent to each other to prevent redundancy.\n   - Players assigned to key positions must not have any attribute below the position's minimum requirement.\n   - Each player can occupy only one position, and each position must be filled by exactly one player.\n\nTask:\nUsing the provided player attributes, position requirements, opponent strategies, and placement constraints, assign each of Zephyr's 15 players to the 15 team positions. Ensure that the team's lineup effectively counters the opponent's strategies by meeting or exceeding the combined attribute thresholds while adhering to all placement constraints. Provide a clear justification for each player-position assignment based on their attributes and the strategic needs.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the optimal assignment of Zephyr's 15 players to the team's 15 positions, several critical factors must be meticulously evaluated:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Player Attributes Evaluation:\n   - Quantitative Assessment: Each player's Speed, Strength, Tactical Awareness, and Endurance ratings must be thoroughly analyzed."
+      },
+      {
+        "step_number": 3,
+        "description": "Understanding the distribution of these attributes across the team is essential for strategic placement."
+      },
+      {
+        "step_number": 4,
+        "description": "- Attribute Prioritization: Depending on the position's requirements (offensive, defensive, or tactical), certain attributes will take precedence."
+      },
+      {
+        "step_number": 5,
+        "description": "For instance, offensive positions may prioritize Speed and Endurance, whereas defensive positions may focus on Strength and Tactical Awareness."
+      },
+      {
+        "step_number": 6,
+        "description": "Position Requirements Alignment:\n   - Minimum Thresholds: Ensuring that players meet or exceed the minimum attribute requirements for their designated positions is non-negotiable, especially for key positions requiring high Tactical Awareness."
+      }
+    ],
+    "golden_final_answer": "Through this methodical assignment process, Zephyr's team is strategically optimized to counter the opponent's known strategies effectively while adhering to all specified constraints. This ensures a balanced and resilient lineup poised for championship success.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "position",
+        "focus",
+        "assessment",
+        "ensuring",
+        "depending",
+        "endurance",
+        "alignment",
+        "several",
+        "distribution"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0049",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr is gearing up for the national track cycling championship and aims to optimize their equipment setup to achieve the highest possible speed without compromising endurance or exceeding budgetary limits. To accomplish this, Zephyr must select the most effective combination of gear ratio, tire type, and aerodynamic components from the available options.\n\nRelevant Facts and Constraints:\n\n1. Gear Ratios:\n   - Gear A: \n     - Speed Potential: 9.0 m/s\n     - Weight: 1.2 kg\n     - Cost: \\$800\n   - Gear B: \n     - Speed Potential: 8.5 m/s\n     - Weight: 1.0 kg\n     - Cost: \\$700\n   - Gear C: \n     - Speed Potential: 9.5 m/s\n     - Weight: 1.5 kg\n     - Cost: \\$900\n\n2. Tire Types:\n   - Tire X: \n     - Speed Contribution: +0.5 m/s\n     - Weight: 0.3 kg\n     - Cost: \\$200\n   - Tire Y: \n     - Speed Contribution: +0.3 m/s\n     - Weight: 0.2 kg\n     - Cost: \\$150\n   - Tire Z: \n     - Speed Contribution: +0.4 m/s\n     - Weight: 0.25 kg\n     - Cost: \\$180\n\n3. Aerodynamic Components (Up to Two can be selected):\n   - Component Alpha: \n     - Speed Gain: +0.7 m/s\n     - Weight: 0.4 kg\n     - Cost: \\$500\n   - Component Beta: \n     - Speed Gain: +0.6 m/s\n     - Weight: 0.35 kg\n     - Cost: \\$450\n   - Component Gamma: \n     - Speed Gain: +0.5 m/s\n     - Weight: 0.3 kg\n     - Cost: \\$400\n\n4. Constraints:\n   - Total Weight: Must not exceed 3.5 kg.\n   - Total Budget: Must not exceed \\$1,800.\n   - Component Selection: Exactly one gear ratio and one tire type must be selected. Up to two aerodynamic components can be chosen, but selecting fewer is allowed.\n\nProblem to Solve:\n\nDetermine the combination of one gear ratio, one tire type, and up to two aerodynamic components that Zephyr should select to maximize the total speed potential while ensuring that the total weight does not exceed 3.5 kg and the total cost does not surpass \\$1,800. Provide the selected components and the resulting total speed, total weight, and total cost.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine the optimal combination of gear ratio, tire type, and aerodynamic components for Zephyr's national track cycling championship, the following factors must be meticulously evaluated:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Component Selection: Zephyr must select exactly one gear ratio and one tire type, with the option to choose up to two aerodynamic components."
+      },
+      {
+        "step_number": 3,
+        "description": "The selection must consider the trade-off between speed enhancement, weight addition, and cost implications."
+      },
+      {
+        "step_number": 4,
+        "description": "Constraints Compliance:\n   - Total Weight: The cumulative weight of the selected components must not exceed 3.5 kg."
+      },
+      {
+        "step_number": 5,
+        "description": "Weight is a critical factor affecting both speed and endurance."
+      },
+      {
+        "step_number": 6,
+        "description": "- Total Budget: The total expenditure should remain within the \\$1,800 limit."
+      }
+    ],
+    "golden_final_answer": "This configuration offers Zephyr an optimal balance between speed enhancement, weight efficiency, and cost-effectiveness, aligning perfectly with the championship objectives and constraints.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "factors",
+        "total",
+        "remain",
+        "implications",
+        "select",
+        "endurance",
+        "limit",
+        "championship",
+        "determine",
+        "choose"
       ],
       "common_failure_modes": [],
       "logical_dependencies": []

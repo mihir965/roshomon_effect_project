@@ -11,7 +11,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 MODELS = {
     "openai": "gpt-4o",
     "anthropic": "claude-haiku-4-5-20251001",
-    "gemini": "gemini-2.0-flash",
+    "gemini": "gemini-2.5-flash",
 }
 
 OLLAMA_BASE_URL = "http://localhost:11434"

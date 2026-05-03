@@ -48,12 +48,16 @@ def recompute_fps(results: list[dict], weights: dict) -> list[dict]:
 def build_leaderboard(results: list[dict]) -> pd.DataFrame:
     rows = [{
         "Model": r["model_name"],
+        "Provider": r.get("provider", "—"),
         "FPS":  round(r.get("mean_fps", 0), 4),
         "AAS":  round(r.get("mean_aas", 0), 4),
         "RAS":  round(r.get("mean_ras", 0), 4),
         "SLMS": round(r.get("mean_slms", 0), 4),
         "CS":   round(r.get("mean_cs", 0), 4),
         "DKUS": round(r.get("mean_dkus", 0), 4),
+        "N":    r.get("n_questions", len(r.get("question_results", []))),
+        "T":    r.get("t_runs", "—"),
+        "Run at (UTC)": r.get("timestamp", "—"),
     } for r in results]
     df = pd.DataFrame(rows).sort_values("FPS", ascending=False).reset_index(drop=True)
     df.index += 1
@@ -146,81 +150,131 @@ elif page == "Evaluate":
         st.warning("Build the golden truth dataset first (Dataset page).")
         st.stop()
 
-    from llm.ollama_llm import list_local_models
-    local_models = list_local_models()
+    from datetime import datetime, timezone  # noqa: E402
+    from llm.model_registry import all_available_models, parse_model_spec  # noqa: E402
 
-    cloud_options = ["openai", "anthropic", "gemini"]
-    all_options = cloud_options + local_models
+    @st.cache_data(ttl=120, show_spinner="Discovering available models…")
+    def _discover():
+        return all_available_models()
 
-    st.markdown("**Cloud models** (require API keys)   +   **Local models** (Ollama, free)")
-    if local_models:
-        st.caption(f"Local models detected: {', '.join(f'`{m}`' for m in local_models)}")
-    else:
-        st.warning("No Ollama models detected. Make sure `ollama serve` is running.")
+    refresh_col, _ = st.columns([1, 5])
+    with refresh_col:
+        if st.button("🔄 Refresh model list"):
+            _discover.clear()
 
-    col1, col2, col3 = st.columns(3)
+    catalog = _discover()
+
+    st.markdown(
+        "Pick any models you want to compare — multiple per provider is fine. "
+        "The list is fetched live from each provider; an empty section means no API key, "
+        "no Ollama daemon, or the network call failed."
+    )
+
+    selected_specs: list[str] = []
+    cols = st.columns(4)
+    for col, provider in zip(cols, ("openai", "anthropic", "gemini", "ollama")):
+        with col:
+            models = catalog.get(provider, [])
+            label = f"{provider}  ({len(models)})"
+            if not models:
+                st.markdown(f"**{label}**")
+                if provider == "openai":
+                    st.caption("No `OPENAI_API_KEY`")
+                elif provider == "anthropic":
+                    st.caption("No `ANTHROPIC_API_KEY`")
+                elif provider == "gemini":
+                    st.caption("No `GOOGLE_API_KEY`")
+                else:
+                    st.caption("Ollama daemon not reachable")
+                continue
+            picks = st.multiselect(label, models, key=f"pick_{provider}")
+            selected_specs.extend(f"{provider}:{m}" for m in picks)
+
+    st.markdown("---")
+    col1, col2 = st.columns(2)
     with col1:
-        default_selection = local_models[:1] if local_models else []
-        selected_models = st.multiselect(
-            "LLMs to evaluate", all_options, default=default_selection
-        )
-    with col2:
         n_q = st.number_input("Questions", min_value=1, max_value=200, value=10, step=5)
-    with col3:
+    with col2:
         t_runs = st.number_input("Runs / question (CS)", min_value=1, max_value=10, value=T_RUNS)
 
     if abs(total_w - 1.0) > 0.01:
         st.error("Fix sidebar weights to sum to 1.0 before running.")
         st.stop()
 
-    if not selected_models:
-        st.warning("Select at least one model.")
+    if not selected_specs:
+        st.info("Pick at least one model above.")
         st.stop()
+
+    st.write(f"**Selected ({len(selected_specs)})**: " + ", ".join(f"`{s}`" for s in selected_specs))
 
     if st.button("Start Evaluation", type="primary"):
         from data.dataset_loader import load_golden_truth
         from evaluation.evaluator import evaluate_model, results_to_dict
 
         golden = load_golden_truth()[:n_q]
-        all_results = []
+        new_runs: list[dict] = []
         progress = st.progress(0.0)
+        timestamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
 
-        for i, model_name in enumerate(selected_models):
-            st.write(f"Querying **{model_name}**…")
+        for i, spec in enumerate(selected_specs):
+            provider, model_id = parse_model_spec(spec)
+            st.write(f"Querying **{spec}**…")
             try:
-                if model_name == "openai":
+                if provider == "openai":
                     from llm.openai_llm import OpenAILLM
-                    llm = OpenAILLM()
-                elif model_name == "anthropic":
+                    llm = OpenAILLM(model_name=model_id)
+                elif provider == "anthropic":
                     from llm.anthropic_llm import AnthropicLLM
-                    llm = AnthropicLLM()
-                elif model_name == "gemini":
+                    llm = AnthropicLLM(model_name=model_id)
+                elif provider == "gemini":
                     from llm.gemini_llm import GeminiLLM
-                    llm = GeminiLLM()
+                    llm = GeminiLLM(model_name=model_id)
                 else:
                     from llm.ollama_llm import OllamaLLM
-                    llm = OllamaLLM(model_name=model_name)
+                    llm = OllamaLLM(model_name=model_id)
 
                 result = evaluate_model(llm, golden, weights, t_runs)
                 d = results_to_dict(result)
-                all_results.append(d)
+                d["provider"] = provider
+                d["timestamp"] = timestamp
+                d["n_questions"] = len(golden)
+                d["t_runs"] = t_runs
+                new_runs.append(d)
                 st.success(
-                    f"{model_name} — FPS: {result.mean_fps:.3f} | "
+                    f"{spec} — FPS: {result.mean_fps:.3f} | "
                     f"AAS: {result.mean_aas:.3f} | RAS: {result.mean_ras:.3f} | "
                     f"SLMS: {result.mean_slms:.3f} | CS: {result.mean_cs:.3f} | "
-                    f"DKUS: {result.mean_dkus:.3f}"
+                    f"DKUS: {result.mean_dkus:.3f}  ·  "
+                    f"cache: {result.cache_hits} hits / {result.cache_misses} misses"
                 )
             except Exception as exc:
-                st.error(f"{model_name} failed: {exc}")
+                st.error(f"{spec} failed: {exc}")
 
-            progress.progress((i + 1) / len(selected_models))
+            progress.progress((i + 1) / len(selected_specs))
 
-        if all_results:
-            with open("results.json", "w") as f:
-                json.dump(all_results, f, indent=2)
-            st.session_state["results"] = all_results
+        if new_runs:
+            results_path = Path("results.json")
+            existing = []
+            if results_path.exists():
+                try:
+                    with open(results_path) as f:
+                        existing = json.load(f)
+                except Exception:
+                    existing = []
+
+            new_names = {r["model_name"] for r in new_runs}
+            kept = [r for r in existing if r["model_name"] not in new_names]
+            merged = kept + new_runs
+
+            with open(results_path, "w") as f:
+                json.dump(merged, f, indent=2)
+            st.session_state["results"] = merged
             st.balloons()
-            st.info("Results saved to `results.json`. Navigate to the Results page.")
+            replaced = len(existing) - len(kept)
+            st.info(
+                f"Saved **{len(new_runs)}** new run(s); replaced **{replaced}** prior entry by name; "
+                f"**{len(merged)}** total models in `results.json`. Navigate to the Results page."
+            )
 
 
 # ── Results page ──────────────────────────────────────────────────────────────
@@ -233,12 +287,44 @@ elif page == "Results":
         st.info("No results yet — run an evaluation first.")
         st.stop()
 
+    # Top-bar controls: drop a model, wipe leaderboard, or wipe LLM response cache
+    top_l, top_m, top_r1, top_r2 = st.columns([3, 2, 1, 1])
+    with top_l:
+        model_names_all = [r["model_name"] for r in results]
+        to_drop = st.multiselect("Drop specific models", model_names_all, key="drop_models")
+    with top_m:
+        if to_drop and st.button("Drop selected"):
+            kept = [r for r in results if r["model_name"] not in set(to_drop)]
+            with open("results.json", "w") as f:
+                json.dump(kept, f, indent=2)
+            st.session_state["results"] = kept
+            st.rerun()
+    with top_r1:
+        if st.button("🗑 Clear all", help="Wipe results.json"):
+            Path("results.json").unlink(missing_ok=True)
+            st.session_state.pop("results", None)
+            st.rerun()
+    with top_r2:
+        try:
+            from storage.chroma_store import ChromaStore
+            _store = ChromaStore()
+            cache_n = _store.count()
+        except Exception:
+            cache_n = 0
+        if st.button(f"🧹 Cache ({cache_n})", help="Wipe cached LLM responses (chroma_db/)"):
+            try:
+                ChromaStore().wipe()
+                st.success("LLM response cache cleared.")
+            except Exception as exc:
+                st.error(f"Failed to wipe cache: {exc}")
+            st.rerun()
+
     results = recompute_fps(results, weights)
     df = build_leaderboard(results)
 
     # Leaderboard
     st.subheader("Leaderboard")
-    st.dataframe(df, use_container_width=True)
+    st.dataframe(df, width="stretch")
     winner = df.iloc[0]["Model"]
     st.success(f"Recommended model: **{winner}**  (FPS = {df.iloc[0]['FPS']})")
 
@@ -257,7 +343,7 @@ elif page == "Results":
         title="Metric Radar",
         height=450,
     )
-    st.plotly_chart(fig_radar, use_container_width=True)
+    st.plotly_chart(fig_radar, width="stretch")
 
     # Grouped bar
     fig_bar = px.bar(
@@ -267,7 +353,7 @@ elif page == "Results":
         labels={"variable": "Metric", "value": "Score"},
         title="Score Breakdown by Metric",
     )
-    st.plotly_chart(fig_bar, use_container_width=True)
+    st.plotly_chart(fig_bar, width="stretch")
 
     # Per-question drill-down
     st.subheader("Question Drill-Down")
@@ -284,7 +370,7 @@ elif page == "Results":
         "DKUS": round(qr["dkus"], 3),
         "FPS":  round(qr.get("fps", 0), 3),
     } for qr in model_result["question_results"]]
-    st.dataframe(pd.DataFrame(qr_rows), use_container_width=True)
+    st.dataframe(pd.DataFrame(qr_rows), width="stretch")
 
     # Question detail
     qids = [qr["question_id"] for qr in model_result["question_results"]]
