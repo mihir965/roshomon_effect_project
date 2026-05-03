@@ -14,7 +14,7 @@ st.set_page_config(
     layout="wide",
 )
 
-from config import DEFAULT_WEIGHTS, GOLDEN_TRUTH_PATH, T_RUNS  # noqa: E402
+from config import DEFAULT_WEIGHTS, GOLDEN_TRUTH_PATH, T_RUNS, HF_MODELS  # noqa: E402
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────
@@ -148,15 +148,16 @@ elif page == "Evaluate":
 
     col1, col2, col3 = st.columns(3)
     with col1:
+        all_model_choices = ["openai", "anthropic", "gemini", "llama", "qwen", "llama4", *HF_MODELS.keys()]
         selected_models = st.multiselect(
-            "LLMs to evaluate",
-            ["llama", "qwen", "llama4", "openai", "anthropic", "gemini"],
-            default=["llama", "qwen", "llama4"],
+            "LLMs to evaluate", all_model_choices, default=["openai"]
         )
     with col2:
-        n_q = st.number_input("Questions", min_value=1, max_value=200, value=10, step=5)
+        n_q = st.number_input("Questions", min_value=1, max_value=200, value=5, step=5)
     with col3:
         t_runs = st.number_input("Runs / question (CS)", min_value=1, max_value=10, value=T_RUNS)
+        if t_runs == 1:
+            st.caption("CS will be 1.0 for all models (need ≥2 runs for a real variance signal)")
 
     if abs(total_w - 1.0) > 0.01:
         st.error("Fix sidebar weights to sum to 1.0 before running.")
@@ -186,9 +187,12 @@ elif page == "Evaluate":
                 elif model_name == "anthropic":
                     from llm.anthropic_llm import AnthropicLLM
                     llm = AnthropicLLM()
-                else:
+                elif model_name == "gemini":
                     from llm.gemini_llm import GeminiLLM
                     llm = GeminiLLM()
+                else:
+                    from llm.hf_llm import HuggingFaceLLM
+                    llm = HuggingFaceLLM(HF_MODELS[model_name])
 
                 result = evaluate_model(llm, golden, weights, t_runs)
                 d = results_to_dict(result)
@@ -225,40 +229,129 @@ elif page == "Results":
     results = recompute_fps(results, weights)
     df = build_leaderboard(results)
 
-    # Leaderboard
+    # ── Leaderboard ───────────────────────────────────────────────────────────
     st.subheader("Leaderboard")
     st.dataframe(df, use_container_width=True)
     winner = df.iloc[0]["Model"]
     st.success(f"Recommended model: **{winner}**  (FPS = {df.iloc[0]['FPS']})")
 
-    # Radar chart
-    fig_radar = go.Figure()
-    for _, row in df.iterrows():
-        vals = [row[m] for m in METRICS]
-        fig_radar.add_trace(go.Scatterpolar(
-            r=vals + [vals[0]],
-            theta=METRICS + [METRICS[0]],
-            fill="toself",
-            name=row["Model"],
-        ))
-    fig_radar.update_layout(
-        polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
-        title="Metric Radar",
-        height=450,
-    )
-    st.plotly_chart(fig_radar, use_container_width=True)
+    # ── Overview charts (radar + grouped bar) ─────────────────────────────────
+    st.subheader("Overall Comparison")
+    col_radar, col_bar = st.columns(2)
 
-    # Grouped bar
-    fig_bar = px.bar(
-        df.melt(id_vars="Model", value_vars=METRICS),
-        x="variable", y="value", color="Model",
-        barmode="group",
-        labels={"variable": "Metric", "value": "Score"},
-        title="Score Breakdown by Metric",
-    )
-    st.plotly_chart(fig_bar, use_container_width=True)
+    with col_radar:
+        fig_radar = go.Figure()
+        for _, row in df.iterrows():
+            vals = [row[m] for m in METRICS]
+            fig_radar.add_trace(go.Scatterpolar(
+                r=vals + [vals[0]],
+                theta=METRICS + [METRICS[0]],
+                fill="toself",
+                name=row["Model"],
+            ))
+        fig_radar.update_layout(
+            polar=dict(radialaxis=dict(visible=True, range=[0, 1])),
+            title="Metric Radar",
+            height=400,
+            margin=dict(t=50, b=20),
+        )
+        st.plotly_chart(fig_radar, use_container_width=True)
 
-    # Per-question drill-down
+    with col_bar:
+        fig_bar = px.bar(
+            df.melt(id_vars="Model", value_vars=METRICS),
+            x="variable", y="value", color="Model",
+            barmode="group",
+            labels={"variable": "Metric", "value": "Score"},
+            title="Score Breakdown by Metric",
+            height=400,
+        )
+        fig_bar.update_layout(margin=dict(t=50, b=20), yaxis_range=[0, 1])
+        st.plotly_chart(fig_bar, use_container_width=True)
+
+    # ── FPS composite bar ─────────────────────────────────────────────────────
+    st.subheader("Final Performance Score (FPS)")
+    fig_fps = px.bar(
+        df.sort_values("FPS", ascending=True),
+        x="FPS", y="Model", orientation="h",
+        color="Model",
+        text="FPS",
+        title="Composite FPS (weighted sum of all metrics)",
+        height=200 + 60 * len(df),
+    )
+    fig_fps.update_traces(texttemplate="%{text:.4f}", textposition="outside")
+    fig_fps.update_layout(xaxis_range=[0, 1], showlegend=False, margin=dict(t=50))
+    st.plotly_chart(fig_fps, use_container_width=True)
+
+    # ── Per-question line charts ───────────────────────────────────────────────
+    st.subheader("Per-Question Performance")
+    st.caption("How each model scores on every individual question — good for spotting where one model beats the other.")
+
+    metric_choice = st.selectbox("Metric to plot per question", METRICS + ["FPS"], index=1)
+
+    # Build a long-form dataframe of per-question scores
+    pq_rows = []
+    for r in results:
+        for qr in r.get("question_results", []):
+            pq_rows.append({
+                "Model": r["model_name"],
+                "Question": qr["question_id"],
+                "AAS":  qr["aas"],
+                "RAS":  qr["ras"],
+                "SLMS": qr["slms"],
+                "CS":   qr["cs"],
+                "DKUS": qr["dkus"],
+                "FPS":  qr.get("fps", 0),
+            })
+    pq_df = pd.DataFrame(pq_rows)
+
+    fig_pq = px.line(
+        pq_df, x="Question", y=metric_choice, color="Model",
+        markers=True,
+        title=f"{metric_choice} per Question",
+        labels={"Question": "Question ID", metric_choice: metric_choice},
+    )
+    fig_pq.update_layout(yaxis_range=[0, 1], xaxis_tickangle=-45)
+    st.plotly_chart(fig_pq, use_container_width=True)
+
+    # ── Score distribution box plots ──────────────────────────────────────────
+    st.subheader("Score Distributions")
+    st.caption("Box plots show median, spread, and outliers across all questions.")
+
+    fig_box = px.box(
+        pq_df.melt(id_vars="Model", value_vars=METRICS, var_name="Metric", value_name="Score"),
+        x="Metric", y="Score", color="Model",
+        points="all",
+        title="Distribution of Scores Across Questions",
+    )
+    fig_box.update_layout(yaxis_range=[0, 1])
+    st.plotly_chart(fig_box, use_container_width=True)
+
+    # ── Head-to-head delta (only when exactly 2 models) ───────────────────────
+    if len(results) == 2:
+        st.subheader("Head-to-Head: Score Delta per Question")
+        st.caption("Positive = first model wins on that question; negative = second model wins.")
+
+        m1_name, m2_name = results[0]["model_name"], results[1]["model_name"]
+        m1_df = pq_df[pq_df["Model"] == m1_name].set_index("Question")
+        m2_df = pq_df[pq_df["Model"] == m2_name].set_index("Question")
+        common_qs = m1_df.index.intersection(m2_df.index)
+
+        delta_metric = st.selectbox("Metric for delta", METRICS + ["FPS"], index=1, key="delta_metric")
+        delta = (m1_df.loc[common_qs, delta_metric] - m2_df.loc[common_qs, delta_metric]).reset_index()
+        delta.columns = ["Question", "Delta"]
+        delta["Winner"] = delta["Delta"].apply(lambda v: m1_name if v > 0 else m2_name)
+
+        fig_delta = px.bar(
+            delta, x="Question", y="Delta", color="Winner",
+            title=f"{delta_metric} Delta  ({m1_name} − {m2_name})",
+            labels={"Delta": f"Δ {delta_metric}"},
+        )
+        fig_delta.add_hline(y=0, line_dash="dash", line_color="gray")
+        fig_delta.update_layout(xaxis_tickangle=-45)
+        st.plotly_chart(fig_delta, use_container_width=True)
+
+    # ── Per-question drill-down ────────────────────────────────────────────────
     st.subheader("Question Drill-Down")
     model_names = [r["model_name"] for r in results]
     sel_model = st.selectbox("Model", model_names)

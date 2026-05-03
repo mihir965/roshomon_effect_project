@@ -9,6 +9,7 @@ ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 HF_API_KEY = os.getenv("HF_API_KEY", "")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+HF_TOKEN = os.getenv("HF_TOKEN", "")
 
 MODELS = {
     "openai": "gpt-4o",
@@ -21,6 +22,8 @@ HF_MODELS = {
     "llama":     ("meta-llama/Llama-3.3-70B-Instruct", "together"),
     "qwen":      ("Qwen/Qwen2.5-7B-Instruct",          "together"),
     "deepseek":  ("deepseek-ai/DeepSeek-R1",            "together"),
+    "hf-llama": "meta-llama/Llama-3.2-1B-Instruct",
+    "hf-qwen":  "Qwen/Qwen2.5-7B-Instruct",
 }
 
 GROQ_MODELS = {
@@ -46,7 +49,7 @@ DEFAULT_WEIGHTS = {
     "w_dkus": 0.15,
 }
 
-T_RUNS = 3  # repeated runs per question for Consistency Score
+T_RUNS = 1  # repeated runs per question for CS; set >1 to get a real variance signal
 
 COT_SYSTEM_PROMPT = """You are a precise reasoning assistant. For each question, think through it carefully step by step, then state your final answer.
 
