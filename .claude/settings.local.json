@@ -8,7 +8,9 @@
       "Bash(python3.11 -m venv .venv)",
       "Bash(.venv/bin/python --version)",
       "Bash(.venv/bin/pip --version)",
-      "Bash(.venv/bin/pip install *)"
+      "Bash(.venv/bin/pip install *)",
+      "Bash(.venv/bin/python presentation/generate_plots.py)",
+      "Bash(.venv/bin/python *)"
     ]
   }
 }
