@@ -32,3 +32,5 @@ chroma_db/
 # IDE
 .vscode/
 .idea/
+
+model_outputs.json
