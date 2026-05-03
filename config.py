@@ -10,9 +10,12 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
 
 MODELS = {
     "openai": "gpt-4o",
-    "anthropic": "claude-3-5-sonnet-20241022",
-    "gemini": "gemini-1.5-pro",
+    "anthropic": "claude-haiku-4-5-20251001",
+    "gemini": "gemini-2.0-flash",
 }
+
+OLLAMA_BASE_URL = "http://localhost:11434"
+OLLAMA_MODEL = "llama3"
 
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 CHROMA_PATH = "./chroma_db"
@@ -21,7 +24,8 @@ DATA_DIR = Path("./data")
 GOLDEN_TRUTH_PATH = DATA_DIR / "golden_truth.json"
 
 DATASET_NAME = "avemio/German-RAG-ORPO-Alpaca-HESSIAN-AI"
-DATASET_SPLIT = "hard-reasoning-en"
+DATASET_CONFIG = "hard-reasoning-en"  # subset/config name
+DATASET_SPLIT = "train"               # actual split within that config
 
 DEFAULT_WEIGHTS = {
     "w_aas": 0.20,

@@ -146,10 +146,23 @@ elif page == "Evaluate":
         st.warning("Build the golden truth dataset first (Dataset page).")
         st.stop()
 
+    from llm.ollama_llm import list_local_models
+    local_models = list_local_models()
+
+    cloud_options = ["openai", "anthropic", "gemini"]
+    all_options = cloud_options + local_models
+
+    st.markdown("**Cloud models** (require API keys)   +   **Local models** (Ollama, free)")
+    if local_models:
+        st.caption(f"Local models detected: {', '.join(f'`{m}`' for m in local_models)}")
+    else:
+        st.warning("No Ollama models detected. Make sure `ollama serve` is running.")
+
     col1, col2, col3 = st.columns(3)
     with col1:
+        default_selection = local_models[:1] if local_models else []
         selected_models = st.multiselect(
-            "LLMs to evaluate", ["openai", "anthropic", "gemini"], default=["openai"]
+            "LLMs to evaluate", all_options, default=default_selection
         )
     with col2:
         n_q = st.number_input("Questions", min_value=1, max_value=200, value=10, step=5)
@@ -176,13 +189,19 @@ elif page == "Evaluate":
             st.write(f"Querying **{model_name}**…")
             try:
                 if model_name == "openai":
-                    from llm.openai_llm import OpenAILLM as Cls
+                    from llm.openai_llm import OpenAILLM
+                    llm = OpenAILLM()
                 elif model_name == "anthropic":
-                    from llm.anthropic_llm import AnthropicLLM as Cls
+                    from llm.anthropic_llm import AnthropicLLM
+                    llm = AnthropicLLM()
+                elif model_name == "gemini":
+                    from llm.gemini_llm import GeminiLLM
+                    llm = GeminiLLM()
                 else:
-                    from llm.gemini_llm import GeminiLLM as Cls
+                    from llm.ollama_llm import OllamaLLM
+                    llm = OllamaLLM(model_name=model_name)
 
-                result = evaluate_model(Cls(), golden, weights, t_runs)
+                result = evaluate_model(llm, golden, weights, t_runs)
                 d = results_to_dict(result)
                 all_results.append(d)
                 st.success(

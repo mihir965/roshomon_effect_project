@@ -2,14 +2,18 @@
 
 import json
 import re
+import sys
 from pathlib import Path
 
-from config import DATASET_NAME, DATASET_SPLIT, GOLDEN_TRUTH_PATH
+# Allow running this file directly (python data/dataset_loader.py)
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from config import DATASET_NAME, DATASET_CONFIG, DATASET_SPLIT, GOLDEN_TRUTH_PATH
 
 
 def load_hf_dataset(n_samples: int = None):
     from datasets import load_dataset
-    ds = load_dataset(DATASET_NAME, split=DATASET_SPLIT)
+    ds = load_dataset(DATASET_NAME, DATASET_CONFIG, split=DATASET_SPLIT)
     if n_samples:
         ds = ds.select(range(min(n_samples, len(ds))))
     return ds
@@ -17,18 +21,22 @@ def load_hf_dataset(n_samples: int = None):
 
 def _detect_columns(ds) -> tuple[str, str]:
     cols = ds.column_names
+    cols_lower = {c.lower(): c for c in cols}  # lowercase -> original
+
+    question_col = None
     for candidate in ("instruction", "prompt", "question", "input"):
-        if candidate in cols:
-            question_col = candidate
+        if candidate in cols_lower:
+            question_col = cols_lower[candidate]
             break
-    else:
+    if question_col is None:
         question_col = cols[0]
 
+    answer_col = None
     for candidate in ("chosen", "output", "answer", "response"):
-        if candidate in cols:
-            answer_col = candidate
+        if candidate in cols_lower:
+            answer_col = cols_lower[candidate]
             break
-    else:
+    if answer_col is None:
         answer_col = cols[1] if len(cols) > 1 else cols[0]
 
     return question_col, answer_col

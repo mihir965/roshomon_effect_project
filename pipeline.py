@@ -17,13 +17,15 @@ def get_llm(name: str):
     if name == "gemini":
         from llm.gemini_llm import GeminiLLM
         return GeminiLLM()
-    raise ValueError(f"Unknown model: {name}")
+    # anything else is treated as a local Ollama model name
+    from llm.ollama_llm import OllamaLLM
+    return OllamaLLM(model_name=name)
 
 
 def main():
     parser = argparse.ArgumentParser(description="LLM Reasoning Evaluation Pipeline")
-    parser.add_argument("--models", nargs="+", default=["openai"],
-                        choices=["openai", "anthropic", "gemini"])
+    parser.add_argument("--models", nargs="+", default=["llama3"],
+                        help="Cloud providers (openai/anthropic/gemini) or any Ollama model name (e.g. llama3, mistral)")
     parser.add_argument("--n_questions", type=int, default=20)
     parser.add_argument("--t_runs", type=int, default=T_RUNS)
     parser.add_argument("--rebuild_golden", action="store_true",

@@ -1,0 +1,253 @@
+[
+  {
+    "question_id": "q_0000",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Althea is preparing a comprehensive analysis of four influential political figures-Politicians A, B, C, and D-to evaluate their contributions and criticisms related to recent social justice movements. Each politician has implemented specific policies over the last four years, and their actions have had varying impacts on societal dynamics.\n\nFacts and Constraints:\n1. Politician A introduced a comprehensive education reform in 2020 that increased funding for public schools.\n2. Politician B launched a nationwide healthcare initiative in 2021 aimed at expanding access to mental health services.\n3. Politician C spearheaded a green energy project in 2022, focusing on reducing carbon emissions in urban areas.\n4. Politician D implemented a series of labor laws in 2019 designed to improve workers' rights and wages.\n5. The education reform (Politician A) received mixed reviews, with praise for increased funding but criticism for implementation delays.\n6. The healthcare initiative (Politician B) successfully expanded mental health services but was deemed too costly by fiscal conservatives.\n7. The green energy project (Politician C) led to significant environmental benefits but faced opposition from the fossil fuel industry.\n8. The labor laws (Politician D) were widely supported by labor unions but criticized by large corporations for increased operational costs.\n9. No two politicians introduced their major policy in the same year.\n10. Each policy directly influenced one of the following contemporary issues: educational inequality, mental health stigma, environmental sustainability, and workers' exploitation.\n\nProblem:\nDetermine which politician is associated with addressing each specific contemporary issue based on the policies they implemented and the corresponding impacts described.\n\nQuestion:\nMatch each politician (A, B, C, D) with the contemporary issue they directly influenced (educational inequality, mental health stigma, environmental sustainability, workers' exploitation).",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To accurately match each politician with the corresponding contemporary issue, it's essential to analyze the specific policies they implemented and the direct impacts of these policies as described."
+      },
+      {
+        "step_number": 2,
+        "description": "The approach involves:\n\n1."
+      },
+      {
+        "step_number": 3,
+        "description": "Identifying Policy Focus: Understanding the primary objective of each politician's initiative."
+      },
+      {
+        "step_number": 4,
+        "description": "Aligning Impacts with Issues: Correlating the outcomes and criticisms of each policy with the relevant social justice issue."
+      },
+      {
+        "step_number": 5,
+        "description": "Ensuring Exclusivity: Confirming that each contemporary issue is uniquely associated with one politician, adhering to the constraint that no two politicians address the same issue."
+      },
+      {
+        "step_number": 6,
+        "description": "By systematically evaluating each policy's intent and effects, we can establish clear connections between the politicians and the issues they influenced."
+      }
+    ],
+    "golden_final_answer": "This alignment satisfies all given facts and constraints, ensuring that each issue is distinctly associated with a single politician based on their policy implementations and the resultant societal impacts.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "essential",
+        "intent",
+        "policy",
+        "influenced",
+        "policies",
+        "address",
+        "identifying",
+        "issues",
+        "correlating",
+        "understanding"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0001",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zephyr has been assigned to evaluate three potential sites for a new copper mining operation: Site Alpha, Site Beta, and Site Gamma. Each site has distinct environmental impacts, initial setup costs, projected annual profits, and sustainability ratings. The company's mandate requires that the chosen site must not only be profitable but also meet specific environmental and sustainability criteria to ensure responsible and ethical operations.\n\nRelevant Facts and Constraints:\n1. Site Alpha:\n   - Initial Setup Cost: $50 million\n   - Projected Annual Profit: $15 million\n   - Environmental Impact Score: 7 (on a scale of 1 to 10, with 10 being most harmful)\n   - Sustainability Rating: 6\n\n2. Site Beta:\n   - Initial Setup Cost: $70 million\n   - Projected Annual Profit: $20 million\n   - Environmental Impact Score: 5\n   - Sustainability Rating: 8\n\n3. Site Gamma:\n   - Initial Setup Cost: $60 million\n   - Projected Annual Profit: $18 million\n   - Environmental Impact Score: 6\n   - Sustainability Rating: 7\n\nCompany Constraints:\n- The total budget for initial setup cannot exceed $65 million.\n- The environmental impact score must be no higher than 6 to comply with regulatory standards.\n- The sustainability rating must be at least 7 to align with the company's ethical guidelines.\n- The decision must maximize the projected annual profit within the given constraints.\n\nQuestion:\nBased on the provided data and constraints, which site should Zephyr recommend for the new mining operation to ensure it is both profitable and adheres to the company's environmental and sustainability standards? Provide a logical explanation for your recommendation.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "When evaluating the potential sites for the new copper mining operation, it is essential to systematically assess each site's attributes against the company's established constraints."
+      },
+      {
+        "step_number": 2,
+        "description": "The primary factors to consider include:\n\n1."
+      },
+      {
+        "step_number": 3,
+        "description": "Initial Setup Cost: Ensuring the initial investment does not exceed the stipulated budget of $65 million."
+      },
+      {
+        "step_number": 4,
+        "description": "Environmental Impact: Adhering to the regulatory requirement that the environmental impact score does not surpass 6."
+      },
+      {
+        "step_number": 5,
+        "description": "Sustainability Rating: Aligning with the company's ethical guidelines by maintaining a sustainability rating of at least 7."
+      },
+      {
+        "step_number": 6,
+        "description": "Projected Annual Profit: Maximizing profitability within the aforementioned constraints to ensure the venture's financial viability."
+      }
+    ],
+    "golden_final_answer": "In conclusion, Site Gamma is the most viable option. It effectively balances profitability with adherence to the company's environmental and sustainability standards while staying within the allocated budget. Selecting Site Gamma ensures that the mining operation will be both financially successful and responsibly managed in line with organizational values and regulatory requirements.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "essential",
+        "company",
+        "mining",
+        "sustainability",
+        "ethical",
+        "venture",
+        "financial",
+        "operation",
+        "score",
+        "exceed"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0002",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Aeloria is organizing an interfaith symposium aimed at fostering understanding among five different cultural groups: the Luminaries, the Verdants, the Solarians, the Aquarians, and the Terrans. Each group will present their unique perspectives and engage in discussions to promote youth engagement and prevent extremism.\n\nTo ensure a balanced representation, Aeloria must assign each group to one of five available time slots: Morning, Late Morning, Afternoon, Late Afternoon, and Evening. The following constraints apply:\n\n1. The Luminaries refuse to present in the Evening slot.\n2. The Verdants prefer to present either in the Morning or Afternoon but cannot do so in the Late Morning.\n3. The Solarians must present before the Aquarians but not immediately before them.\n4. The Terrans are only available to present in the Late Morning or Late Afternoon slots.\n5. No two groups that have previously had disagreements (Luminaries and Terrans) can present in adjacent time slots.\n\nDetermine a valid schedule assigning each cultural group to a specific time slot that satisfies all the above constraints.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine a valid schedule for the interfaith symposium, the following steps and considerations are essential:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Identify Time Slot Preferences and Restrictions:\n   - Luminaries: Cannot present in the Evening slot."
+      },
+      {
+        "step_number": 3,
+        "description": "- Verdants: Prefer Morning or Afternoon slots; cannot present in Late Morning."
+      },
+      {
+        "step_number": 4,
+        "description": "- Terrans: Available only in Late Morning or Late Afternoon slots."
+      },
+      {
+        "step_number": 5,
+        "description": "- Solarians and Aquarians: Solarians must present before Aquarians, but not immediately before."
+      },
+      {
+        "step_number": 6,
+        "description": "Analyze Sequential Constraints:\n   - The requirement that Solarians present before Aquarians adds a sequential dependency that must be accommodated without placing them in immediately consecutive time slots."
+      }
+    ],
+    "golden_final_answer": "This schedule ensures balanced representation, adheres to all specified constraints, and promotes an environment conducive to fostering understanding among the diverse cultural groups.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "essential",
+        "dependency",
+        "restrictions",
+        "morning",
+        "solarians",
+        "available",
+        "evening",
+        "interfaith",
+        "aquarians",
+        "without"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0003",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zyra is preparing to launch a new campaign to promote green energy solutions across her region. She aims to organize workshops in four different cities: Alpha, Beta, Gamma, and Delta. Each workshop requires a team of activists and specific resources, and each city has varying levels of community support and resource availability.\n\nRelevant Facts and Constraints:\n\n1. Volunteer Availability: Zyra has a total of 12 activist volunteers. Each workshop requires exactly 3 activists.\n2. Budget: The total budget allocated for resources is $6,000.\n   - Workshops in Alpha and Beta each require $1,500.\n   - Workshops in Gamma and Delta each require $900.\n3. Community Support Levels:\n   - Alpha: 4\n   - Beta: 3\n   - Gamma: 5\n   - Delta: 2\n   - (Support levels are rated on a scale from 1 to 5, with higher numbers indicating greater support.)\n4. Impact Requirement: Zyra wants to organize workshops in at least two cities with a community support level of 4 or higher to ensure maximum impact.\n\nProblem Statement:\n\nGiven the constraints on volunteer availability and budget, determine which cities Zyra should select for her workshops to maximize community impact while meeting her requirement of organizing workshops in at least two cities with a support level of 4 or higher.\n\nTask:\n\nIdentify the combination of cities where Zyra should hold workshops such that:\n- The total number of required activists does not exceed 12.\n- The total cost of resources does not exceed $6,000.\n- At least two of the selected cities have a community support level of 4 or higher.\n\nProvide the list of cities that satisfy all the above conditions.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "Identify Cities with Support Level >= 4"
+      },
+      {
+        "step_number": 2,
+        "description": "Calculate Resource Requirements for Required Workshops"
+      },
+      {
+        "step_number": 3,
+        "description": "Assess Remaining Resources for Additional Workshops"
+      },
+      {
+        "step_number": 4,
+        "description": "Optimize Additional Workshops for Maximum Impact"
+      },
+      {
+        "step_number": 5,
+        "description": "Final Selection Based on Constraints and Impact"
+      }
+    ],
+    "golden_final_answer": "- Community Support: Alpha (4) and Gamma (5) meet the requirement of at least two cities with support levels of 4 or higher.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "maximum",
+        "additional",
+        "requirements",
+        "final",
+        "constraints",
+        "assess",
+        "optimize",
+        "resource",
+        "required",
+        "workshops"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  },
+  {
+    "question_id": "q_0004",
+    "task_domain": "hard-reasoning",
+    "difficulty_level": "hard",
+    "question": "Zyra is preparing to launch a new social platform designed to connect users while prioritizing data privacy and inclusivity. The platform offers three key features: personalized content feeds, real-time chat functionalities, and user-generated event planning tools. To align with her ethical technology principles, Zyra must ensure that each feature adheres to strict data privacy regulations, supports diverse user needs, and promotes sustainable technology practices. Additionally, the development team has limited resources, allowing only two out of the three features to be fully implemented in the initial launch phase.\n\nRelevant Facts and Constraints:\n1. Personalized content feeds require extensive user data collection to optimize content relevance.\n2. Real-time chat functionalities necessitate robust encryption and continuous data monitoring to prevent breaches.\n3. User-generated event planning tools encourage community engagement but rely on accurate location data, which raises privacy concerns.\n4. Implementing personalized content feeds aligns with user engagement goals but may conflict with data privacy regulations if not properly managed.\n5. Real-time chat functionalities enhance communication but increase the platform's carbon footprint due to high server usage.\n6. User-generated event planning tools promote inclusivity and community building but are less resource-intensive to develop and maintain.\n7. The platform must comply with all regional data privacy laws and support accessibility standards for users with disabilities.\n8. The initial launch has a strict deadline, and the development team cannot exceed the allocated budget.\n\nTask:\nDetermine which two features Zyra should prioritize for the initial launch of the social platform to best align with her commitment to ethical technology, data privacy, inclusivity, and sustainability while adhering to the given constraints.",
+    "golden_reasoning_steps": [
+      {
+        "step_number": 1,
+        "description": "To determine which two features Zyra should prioritize for the initial launch of her social platform, several key factors must be evaluated:\n\n1."
+      },
+      {
+        "step_number": 2,
+        "description": "Data Privacy Compliance: Ensuring adherence to regional data privacy laws is paramount."
+      },
+      {
+        "step_number": 3,
+        "description": "Features that require extensive data collection or real-time monitoring must be scrutinized for potential conflicts with these regulations."
+      },
+      {
+        "step_number": 4,
+        "description": "Inclusivity and Community Building: Features that promote inclusivity and foster community engagement align with ethical technology principles and can enhance user satisfaction and platform growth."
+      },
+      {
+        "step_number": 5,
+        "description": "Resource Allocation and Sustainability: Given the limited development resources and the need to minimize the platform's carbon footprint, it is essential to prioritize features that are less resource-intensive and promote sustainable technology practices."
+      },
+      {
+        "step_number": 6,
+        "description": "Accessibility Standards: Compliance with accessibility standards for users with disabilities is a non-negotiable requirement that must be integrated into the selected features."
+      }
+    ],
+    "golden_final_answer": "By prioritizing user-generated event planning tools and real-time chat functionalities, Zyra can effectively balance ethical considerations, resource constraints, and strategic objectives, laying a robust foundation for the platform's successful and responsible launch.",
+    "expected_knowledge_domain": "hard-reasoning",
+    "reasoning_type": "multi-step",
+    "evaluation_criteria": {
+      "must_include_concepts": [
+        "features",
+        "essential",
+        "footprint",
+        "accessibility",
+        "regional",
+        "sustainability",
+        "practices",
+        "ethical",
+        "conflicts",
+        "enhance"
+      ],
+      "common_failure_modes": [],
+      "logical_dependencies": []
+    }
+  }
+]
