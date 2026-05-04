@@ -20,7 +20,6 @@ env/
 
 # Data & results (large / generated files)
 data/golden_truth.json
-results.json
 chroma_db/
 
 # Jupyter
