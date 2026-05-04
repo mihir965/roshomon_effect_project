@@ -10,7 +10,9 @@
       "Bash(.venv/bin/pip --version)",
       "Bash(.venv/bin/pip install *)",
       "Bash(.venv/bin/python presentation/generate_plots.py)",
-      "Bash(.venv/bin/python *)"
+      "Bash(.venv/bin/python *)",
+      "Bash(mkdir -p /tmp/pptx_render)",
+      "Bash(libreoffice --headless --convert-to pdf \"671 Final Presentation - MVP.pptx\" --outdir /tmp/pptx_render)"
     ]
   }
 }

@@ -60,23 +60,25 @@ Five reasoning metrics + composite FPS
 Streamlit dashboard + persistent ChromaDB cache
 ```
 
-**On screen — right half (metrics table)**
+**On screen — right half (metrics table — what each tells the evaluator)**
 
-| Metric | Formula | Catches |
+| Metric | Plain-language meaning | Use case it's most telling for |
 |---|---|---|
-| AAS | cos(E(model_ans), E(golden_ans)) | answer correctness |
-| RAS | cos(E(model_chain), E(golden_chain)) | full-chain alignment |
-| SLMS | mean over golden steps of max sim to any model step | step-level coverage |
-| CS | 1 − Var(RAS₁…RAS_T) | consistency across runs |
-| DKUS | \|Cg ∩ Cm\| / \|Cg\| | required concepts present |
-| FPS | weighted sum of all 5 (sliders in UI) | composite recommendation |
+| AAS | "Did it land on the right answer?" | Chatbots, lookups |
+| RAS | "Did it think the same way?" | Auditability, high-stakes |
+| SLMS | "Did it walk through every step?" | Safety-critical reasoning |
+| CS | "Same story twice?" | Agentic loops |
+| DKUS | "Does it use domain vocabulary?" | Specialist domains |
+| FPS | weighted sum (sliders in UI) | Single number for leaderboard |
+
+**Default weights**: RAS 0.30, SLMS 0.25, AAS 0.20, DKUS 0.15, CS 0.10 — reasoning above accuracy is the project's whole point.
 
 **Speaker notes**
-> Pipeline left, metrics right. Five metrics, each catching a different failure mode that a pure-accuracy score misses.
+> Pipeline left, metrics right. Five metrics, each answering a different practical question an evaluator would ask. The right column is the punchline: which score should you actually look at depends on your use case. AAS for chatbots, RAS for high-stakes domains where you need to defend the reasoning, SLMS for safety-critical step-by-step rigor, CS for agentic loops, DKUS for domain-specialist work.
 >
-> The key design decision is **SLMS is asymmetric** — for every golden step, we ask "does the model cover this?" — not the other way. That penalizes missing logic without punishing models that show *more* work. CS uses T=3 repeated runs per question with temperature 0.7; if a model gives different reasoning chains for the same question across runs, its consistency score drops. DKUS is a simple concept-coverage check using substring matching on the must-include list.
+> Two design decisions worth flagging: SLMS is **asymmetric** — for every golden step, we ask "does the model cover this?" — not the other way. That penalizes missing logic without punishing models that show extra work. CS uses T=3 repeated runs per question at temperature 0.7; if a model gives different reasoning chains for the same question across runs, its score drops.
 >
-> All five fold into FPS — Final Performance Score — with weights you can move live in the dashboard. We default to RAS=0.30, SLMS=0.25, AAS=0.20, DKUS=0.15, CS=0.10, putting reasoning above raw answer match.
+> Weights default to reasoning-heavy because the whole point of this framework is to add signal beyond what existing benchmarks already give you for free. Sensitivity analysis in the appendix shows the ranking is stable across reasonable weight choices.
 
 ---
 
@@ -192,6 +194,28 @@ Streamlit dashboard + persistent ChromaDB cache
 ---
 
 # Appendix slides
+
+## A0 — How an evaluator reads each score
+
+**On screen**
+
+| Score | "Did the model…" | High value (≥ 0.7) means | Low value (< 0.4) means |
+|---|---|---|---|
+| AAS | …land on the right answer? | Same answer as golden | Wrong / off-topic |
+| RAS | …reason the same way? | Same logical path | Different chain — Rashomon territory |
+| SLMS | …walk through every step? | Touched all golden steps | Skipped intermediate logic |
+| CS | …tell the same story twice? | Stable across runs | Improvises new chain each time |
+| DKUS | …use domain vocabulary? | Used the required terms | Reasoning in generic English |
+| FPS | …get my recommendation? | High composite — drill into components | Skip this model |
+
+**Decision shortcut**
+
+- High FPS + high RAS + high SLMS → recommend with confidence.
+- High AAS but low RAS/SLMS → **classic Rashomon**; right today, brittle tomorrow.
+- High everything except CS → fine for one-shot use, risky in agent loops.
+- High everything except DKUS → fine for general-purpose, suspect in specialist domains.
+
+---
 
 ## A1 — Detailed metric formulas
 

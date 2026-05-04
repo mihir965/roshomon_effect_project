@@ -113,7 +113,153 @@ models that show more work.
 `w_CS = 0.10`, `w_DKUS = 0.15`. These are user-adjustable in the Streamlit UI
 in real time without re-running queries.
 
-## 3.4 Models evaluated
+## 3.4 How to read each score (evaluator's guide)
+
+Formulas tell you what we compute; this section tells you what to *do* with
+each number when you're choosing a model.
+
+### AAS — "Did it land on the right answer?"
+
+The blunt question every benchmark already asks. Cosine similarity between the
+model's final answer and the golden answer.
+
+- **0.8 +** — essentially the same answer, possibly worded differently.
+- **0.5** — partial overlap; the model said something related but missed key
+  details or hedged.
+- **< 0.3** — wrong or off-topic.
+
+**Most telling for**: end-user-facing tasks where only the final output is
+shown — chatbots, search summaries, quick lookups.
+
+### RAS — "Did it think about the problem the same way?"
+
+The auditability metric. Compares the *whole* reasoning chain to the golden
+chain in embedding space.
+
+- **0.7 +** — chain matches in argument structure; you could trace the same
+  logical path.
+- **0.5** — gets to similar territory but takes a different route; solution
+  by analogy or shortcut.
+- **< 0.4** — the model solved the problem with very different logic. This is
+  where Rashomon pairs live: same answer, different chain.
+
+**Most telling for**: high-stakes domains where the *justification* matters —
+medical triage, legal analysis, regulatory decisions, scientific reasoning.
+A model with high AAS but low RAS gives you the right answer for reasons you
+cannot defend.
+
+### SLMS — "Did it actually walk through every required step?"
+
+Step coverage. For each golden step, we check if the model produced something
+similar. Asymmetric: penalises *missing* logic, doesn't punish models that
+show extra work.
+
+- **0.8 +** — the model touched every required step.
+- **0.5** — half the required steps are missing; the model leapt to
+  conclusions.
+- **< 0.3** — the model wrote a chain that doesn't engage with the actual
+  argument structure.
+
+**Most telling for**: safety-critical reasoning where skipping a verification
+step is a real failure mode. Code generation that should validate inputs,
+medical reasoning that should rule out differentials, financial analysis that
+should check assumptions.
+
+### CS — "Does it tell the same story twice?"
+
+Run-to-run reasoning stability across `T` repeated queries. `1 − Var(RAS)`.
+
+- **0.99 +** — virtually identical reasoning chain across runs (almost every
+  model in our dataset, at temperature 0.7).
+- **0.95** — small but visible variation in how the model frames its argument.
+- **< 0.90** — the model improvises a different chain each time you ask;
+  treat with caution in agentic loops where downstream code depends on the
+  reasoning structure.
+
+**Most telling for**: agentic systems and pipelines where the same query is
+issued repeatedly and downstream components depend on the reasoning shape.
+Less informative when the model is well-prompted with low temperature.
+
+### DKUS — "Does it actually use the domain vocabulary?"
+
+Fraction of must-include concepts that appear in the model's reasoning
+(substring match, lowercased).
+
+- **1.0** — every required domain term is present.
+- **0.5** — mentioned half the required vocabulary.
+- **< 0.3** — the model is reasoning in domain-generic language and dodging
+  the technical specifics.
+
+**Most telling for**: specialist domains where terminology fluency is a proxy
+for grounding — cybersecurity (CVE/CVSS terminology), finance (RSI, MACD,
+volatility), biomedicine (drug names, dosage units), law (statute citations).
+Less informative for general-purpose reasoning where the "vocabulary" is
+ordinary English.
+
+### FPS — "What do I look at first?"
+
+The single number to put on a leaderboard. A weighted sum of the five
+metrics above. **It is meant to be a starting point, not a final verdict.**
+Drill into the components for any model that's a finalist:
+
+- High FPS but low DKUS → the model is right and reasoned well, but you
+  should verify it's not paraphrasing in domain-generic language for a
+  domain-specific question.
+- High FPS but low CS → unstable; consider lowering temperature or pinning
+  a seed before deploying.
+- High AAS but low RAS+SLMS → classic Rashomon case; the model gets
+  answers right today but for reasons you cannot audit. Risky for
+  long-tail / out-of-distribution inputs.
+
+### Quick reference: which score for which use case?
+
+| If you care most about… | Look at | Why |
+|---|---|---|
+| Just the right answer | **AAS** | What current benchmarks already measure. |
+| Auditability / explainability | **RAS** | Closest to "did it reason the way a human expert would?" |
+| Step-by-step rigor | **SLMS** | Catches models that skip required intermediate logic. |
+| Predictability in production | **CS** | Same query → same chain across runs. |
+| Domain-specialist grounding | **DKUS** | Forces use of domain vocabulary. |
+| One number for a quick comparison | **FPS** | Composite — but always drill into the breakdown for finalists. |
+
+## 3.5 Weight justification
+
+The weights encode the central thesis of the project: **reasoning quality should
+matter more than answer accuracy in a recommendation score.** Each value below is
+chosen on principled grounds, not tuned to make any particular model win.
+
+| Weight | Justification |
+|---|---|
+| **w_RAS = 0.30** *(highest)* | Full-chain alignment is the single most direct test of "did the model reason like the golden answer." It is the metric that captures the Rashomon Effect head-on; under-weighting it would defeat the point of the framework. |
+| **w_SLMS = 0.25** | Step-level coverage forces the model to walk through each *required* logical step rather than producing a chain that aggregates to a similar embedding. Catches "right answer, skipped middle." Slightly lower than RAS because RAS already partially subsumes step coverage at the chain level. |
+| **w_AAS = 0.20** | Answer correctness still matters — a model that gets the answer wrong cannot be recommended, no matter how elegant its reasoning. We weight it below RAS+SLMS because (a) every other benchmark already optimises for AAS, so giving it primacy here adds no signal beyond what is already public, and (b) our hypothesis is that two models with equal AAS can have very different reasoning quality. |
+| **w_DKUS = 0.15** | Concept coverage ensures the model touches the domain-required vocabulary (e.g. "RSI", "TVA", "confidence interval"). Down-weighted because the implementation is substring-based — synonyms and paraphrases score zero even when the concept is present. A future LLM-judge variant would justify a higher weight. |
+| **w_CS = 0.10** *(lowest)* | Reasoning consistency across repeated runs is genuinely informative when models are unstable, but at temperature 0.7 every model in our run scored CS ≥ 0.99 (§4.5), so CS does not discriminate well in this dataset. Kept in the composite at low weight as a tie-breaker and to surface unstable models if they appear in future runs. |
+
+The weights sum to 1.0 by design so FPS is in [0, 1], which keeps the composite
+on the same scale as the individual metrics for easy interpretation.
+
+### Sensitivity to weight choice
+
+Rankings produced by the framework are **stable across reasonable weighting
+schemes**. The only scheme that materially changes the recommendation is the
+degenerate "AAS-only" baseline, which is what current accuracy benchmarks
+already give you for free.
+
+| Weighting scheme | Top-3 models (in order) | Mistral's rank |
+|---|---|---|
+| **Default (reasoning-heavy)** | claude-haiku-4-5, claude-sonnet-4, claude-opus-4-5 | 4 |
+| Equal weights (0.20 × 5) | claude-haiku-4-5, claude-sonnet-4, claude-opus-4-5 | 4 |
+| Reasoning-only (RAS + SLMS + AAS, no CS, no DKUS) | claude-haiku-4-5, claude-sonnet-4, claude-opus-4-5 | 4 |
+| AAS-heavy (w_AAS = 0.50) | claude-sonnet-4, mistral, claude-haiku-4-5 | 2 |
+| AAS-only (w_AAS = 1.00) | **mistral**, claude-sonnet-4, claude-opus-4-5 | **1** |
+
+Reading this: the Anthropic family takes 3 of the top-3 spots in every scheme
+that gives reasoning metrics any meaningful weight. mistral only takes the top
+spot when accuracy is the *sole* criterion — which is exactly the failure mode
+this framework was built to expose.
+
+## 3.6 Models evaluated
 
 | Provider | Model | Params | N questions |
 |---|---|---|---|
@@ -128,7 +274,7 @@ in real time without re-running queries.
 T = 3 runs per (model, question). Local models ran on consumer GPU
 (CUDA-accelerated `sentence-transformers`).
 
-## 3.5 Implementation notes
+## 3.7 Implementation notes
 
 - **Caching**: every LLM response is stored in a persistent ChromaDB
   collection keyed by `(question_id, model_name, run_index)`, with a
